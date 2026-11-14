@@ -1,0 +1,1339 @@
+<title>Diva Outerwear</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Jost:wght@300;400;500;600&family=Amiri:ital,wght@0,400;0,700;1,400&family=Tajawal:wght@300;400;500;700&display=swap">
+<style>
+/* Layout: burgundy top bar and footer frame an all-gray page. The hero is a live 3D model on a turntable; every jacket opens in a 360 view with colors and sizes. */
+:root {
+  --bg: #D9D5D3;
+  --bg2: #CBC6C4;
+  --panel: #E8E5E3;
+  --ink: #241F22;
+  --muted: #5E595B;
+  --line: #B7B1AF;
+  --char: #2B2729;
+  --char2: #3B3639;
+  --burg: #5B1327;
+  --burg2: #430C1B;
+  --burg3: #7B2239;
+  --cream: #F2EDEA;
+  --cream2: #D9CFCB;
+  --font-display: 'Bodoni Moda', 'Didot', 'Bodoni 72', Georgia, serif;
+  --font-body: 'Jost', 'Helvetica Neue', Arial, sans-serif;
+  --ease: cubic-bezier(.2, .7, .2, 1);
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { scroll-behavior: smooth; scroll-padding-top: 84px; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font-family: var(--font-body); font-size: 1rem; line-height: 1.6; font-weight: 400;
+  -webkit-font-smoothing: antialiased; overflow-x: hidden;
+}
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); background: var(--burg); z-index: 90; }
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+button { font: inherit; color: inherit; cursor: pointer; }
+h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 500; margin: 0; line-height: 1.05; letter-spacing: -.02em; text-wrap: balance; }
+p { margin: 0; }
+:focus-visible { outline: 2px solid var(--burg3); outline-offset: 3px; }
+.top :focus-visible, .foot :focus-visible, .dark :focus-visible { outline-color: var(--cream); }
+.in { width: 100%; max-width: 1240px; margin-inline: auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.eyebrow { font-size: .72rem; font-weight: 500; letter-spacing: .26em; text-transform: uppercase; color: var(--burg); }
+.dark .eyebrow, .foot .eyebrow { color: var(--cream2); }
+.muted { color: var(--muted); }
+
+/* header */
+.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 80; background: var(--burg); color: var(--cream); transition: box-shadow .3s ease; }
+.top.stuck { box-shadow: 0 12px 30px -18px rgba(20, 4, 10, .7); }
+.bar { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 14px; }
+.brand { font-family: var(--font-display); font-size: 1.7rem; font-weight: 500; letter-spacing: .34em; text-decoration: none; padding-inline-start: .34em; }
+.nav { display: flex; gap: 6px; }
+.nav a { text-decoration: none; padding: 8px 14px; font-size: .78rem; letter-spacing: .18em; text-transform: uppercase; font-weight: 500; opacity: .82; position: relative; }
+.nav a::after { content: ""; position: absolute; left: 14px; right: 14px; bottom: 3px; height: 1px; background: var(--cream); transform: scaleX(0); transform-origin: left; transition: transform .35s var(--ease); }
+.nav a:hover { opacity: 1; }
+.nav a:hover::after { transform: scaleX(1); }
+.bag { display: inline-flex; align-items: center; gap: 10px; background: transparent; border: 1px solid rgba(242, 237, 234, .45); border-radius: 999px; padding: 9px 18px; font-size: .78rem; letter-spacing: .18em; text-transform: uppercase; font-weight: 500; transition: background .25s ease; }
+.bag:hover { background: rgba(242, 237, 234, .12); }
+.bag b { display: inline-grid; place-items: center; min-width: 22px; height: 22px; padding: 0 6px; border-radius: 99px; background: var(--cream); color: var(--burg); font-size: .75rem; letter-spacing: 0; font-weight: 600; font-variant-numeric: tabular-nums; }
+.bag.bump b { animation: bump .5s var(--ease); }
+@keyframes bump { 0% { transform: scale(1); } 40% { transform: scale(1.5); } 100% { transform: scale(1); } }
+
+/* buttons */
+.btn { position: relative; overflow: hidden; display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 16px 34px; border: 1px solid var(--burg); background: var(--burg); color: var(--cream); font-size: .78rem; font-weight: 500; letter-spacing: .22em; text-transform: uppercase; text-decoration: none; transition: background .3s ease, color .3s ease, transform .3s var(--ease); }
+.btn::after { content: ""; position: absolute; top: 0; bottom: 0; width: 40%; left: -60%; background: linear-gradient(100deg, transparent, rgba(255, 255, 255, .25), transparent); transform: skewX(-20deg); }
+.btn:hover::after { left: 130%; transition: left .8s var(--ease); }
+.btn:hover { background: var(--burg2); }
+.btn.line { background: transparent; color: var(--burg); }
+.btn.line:hover { background: var(--burg); color: var(--cream); }
+.btn.block { width: 100%; }
+
+/* hero */
+.hero { position: relative; overflow: hidden; background: radial-gradient(120% 90% at 78% 30%, #E9E6E4 0%, var(--bg) 55%, var(--bg2) 100%); }
+.ghost { position: absolute; left: 50%; bottom: -17%; transform: translateX(-50%); font-family: var(--font-display); font-weight: 500; font-size: clamp(9rem, 30vw, 27rem); letter-spacing: .08em; line-height: .9; color: transparent; -webkit-text-stroke: 1.5px rgba(91, 19, 39, .16); user-select: none; pointer-events: none; white-space: nowrap; will-change: transform; }
+.hero-grid { position: relative; display: grid; grid-template-columns: 1fr minmax(0, 520px); gap: clamp(20px, 5vw, 80px); align-items: center; padding-block: clamp(34px, 6vw, 70px) clamp(90px, 13vw, 190px); }
+.hero-grid > * { min-width: 0; }
+.hero h1 { font-size: clamp(2.8rem, 6.4vw, 5.6rem); margin: 18px 0 24px; font-weight: 500; letter-spacing: -.035em; line-height: 1; }
+.hero h1 em { font-style: italic; font-weight: 400; color: var(--burg); }
+.hero .lead { max-width: 44ch; font-size: 1.12rem; color: var(--muted); font-weight: 300; }
+.ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
+.facts { display: flex; flex-wrap: wrap; gap: 10px 30px; margin-top: 44px; padding-top: 24px; border-top: 1px solid var(--line); font-size: .78rem; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); }
+.facts b { display: block; font-family: var(--font-display); font-size: 1.7rem; letter-spacing: -.02em; color: var(--ink); font-weight: 500; text-transform: none; }
+.rise { animation: rise 1s var(--ease) both; }
+.rise.d1 { animation-delay: .1s; } .rise.d2 { animation-delay: .22s; } .rise.d3 { animation-delay: .34s; } .rise.d4 { animation-delay: .46s; }
+@keyframes rise { from { opacity: 0; transform: translateY(26px); } to { opacity: 1; transform: none; } }
+
+.stage { position: relative; }
+.vcard { position: relative; aspect-ratio: 4 / 5; max-height: 76vh; width: 100%; overflow: hidden; background: linear-gradient(180deg, #ECE9E7 0%, #CFCAC8 62%, #B4AEAC 100%); border: 1px solid var(--line); }
+.vcard::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 18%; background: linear-gradient(180deg, transparent, rgba(60, 40, 48, .16)); pointer-events: none; }
+.vcard canvas, .vwrap canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; touch-action: pan-y; cursor: grab; }
+.vcard canvas:active, .vwrap canvas:active { cursor: grabbing; }
+.hint { position: absolute; left: 50%; bottom: 14px; transform: translateX(-50%); z-index: 2; padding: 7px 16px; border-radius: 99px; background: rgba(43, 39, 41, .78); color: var(--cream); font-size: .7rem; letter-spacing: .2em; text-transform: uppercase; white-space: nowrap; pointer-events: none; }
+.nogl { position: absolute; inset: 0; display: grid; place-items: center; padding: 24px; text-align: center; color: var(--muted); font-size: .92rem; }
+.hmeta { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px; padding-top: 18px; }
+.hcap { min-width: 0; }
+.hcap h3 { font-size: 1.5rem; }
+.hcap span { font-size: .8rem; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+.dots { display: flex; gap: 8px; }
+.dots button { width: 34px; height: 34px; border-radius: 50%; border: 1px solid var(--line); background: transparent; padding: 0; display: grid; place-items: center; }
+.dots button i { width: 10px; height: 10px; border-radius: 50%; background: var(--line); transition: background .3s ease, transform .3s var(--ease); }
+.dots button[aria-pressed="true"] { border-color: var(--burg); }
+.dots button[aria-pressed="true"] i { background: var(--burg); transform: scale(1.3); }
+
+/* ribbon */
+.ribbon { background: var(--char); color: var(--cream2); overflow: hidden; border-block: 1px solid #000; }
+.ribbon-track { display: flex; width: max-content; animation: slide 38s linear infinite; }
+.ribbon-track span { display: inline-flex; align-items: center; gap: 36px; padding: 15px 18px; font-size: .74rem; letter-spacing: .3em; text-transform: uppercase; white-space: nowrap; }
+.ribbon-track span::after { content: ""; width: 6px; height: 6px; background: var(--burg3); transform: rotate(45deg); }
+@keyframes slide { to { transform: translateX(-50%); } }
+
+/* sections */
+.sec { padding-block: clamp(64px, 10vw, 120px); }
+.sec-head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 36px; }
+.sec-head h2 { font-size: clamp(2.2rem, 5vw, 3.8rem); margin-top: 12px; }
+.sec-head h2 em { font-style: italic; font-weight: 400; color: var(--burg); }
+.rv { transform: translateY(34px); transition: transform .9s var(--ease); }
+.rv.in-view { transform: none; }
+
+/* filters */
+.filters { display: flex; flex-wrap: wrap; gap: 14px 36px; align-items: center; margin-bottom: 34px; padding-block: 16px; border-block: 1px solid var(--line); }
+.fgroup { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 6px; }
+.fgroup > span { font-size: .7rem; letter-spacing: .24em; text-transform: uppercase; color: var(--muted); margin-inline-end: 8px; }
+.chip { background: transparent; border: 1px solid transparent; padding: 8px 16px; border-radius: 99px; font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; font-weight: 500; color: var(--ink); transition: background .25s ease, color .25s ease, border-color .25s ease; }
+.chip:hover { border-color: var(--line); }
+.chip[aria-pressed="true"] { background: var(--burg); color: var(--cream); }
+.count { margin-inline-start: auto; font-size: .8rem; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); font-variant-numeric: tabular-nums; }
+
+/* product grid */
+.grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px 28px; }
+.card { min-width: 0; animation: cardin .7s var(--ease) both; }
+@keyframes cardin { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: none; } }
+.open { display: block; width: 100%; padding: 0; border: 0; background: none; text-align: start; }
+.shot { position: relative; aspect-ratio: 4 / 5; overflow: hidden; background: linear-gradient(180deg, #ECE9E7 0%, #CFCAC8 65%, #B8B2B0 100%); border: 1px solid var(--line); }
+.shot::before { content: "DIVA"; position: absolute; inset: 0; display: grid; place-items: center; font-family: var(--font-display); font-size: 3.5rem; letter-spacing: .3em; color: rgba(91, 19, 39, .1); }
+.shot img { position: relative; width: 100%; height: 100%; object-fit: cover; transition: transform 1s var(--ease), opacity .5s ease; }
+.shot img.wait { opacity: 0; }
+.open:hover .shot img { transform: scale(1.045); }
+.tag { position: absolute; z-index: 2; inset-inline-start: 14px; top: 14px; padding: 5px 12px; background: var(--char); color: var(--cream); font-size: .66rem; letter-spacing: .22em; text-transform: uppercase; }
+.view360 { position: absolute; z-index: 2; inset-inline-end: 14px; bottom: 14px; display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; background: var(--cream); color: var(--burg); font-size: .68rem; letter-spacing: .2em; text-transform: uppercase; font-weight: 500; opacity: 0; transform: translateY(8px); transition: opacity .35s ease, transform .35s var(--ease); }
+.open:hover .view360, .open:focus-visible .view360 { opacity: 1; transform: none; }
+.cinfo { display: flex; align-items: baseline; justify-content: space-between; gap: 14px; padding-top: 16px; }
+.cinfo h3 { font-size: 1.45rem; }
+.price { font-family: var(--font-display); font-size: 1.3rem; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.sub { font-size: .74rem; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); margin-top: 4px; }
+.cdots { display: flex; gap: 8px; padding-top: 12px; }
+.cdots button { width: 22px; height: 22px; border-radius: 50%; padding: 0; border: 1px solid rgba(0, 0, 0, .25); box-shadow: 0 0 0 3px transparent; transition: box-shadow .25s ease; }
+.cdots button[aria-pressed="true"] { box-shadow: 0 0 0 2px var(--bg), 0 0 0 3px var(--ink); }
+.empty { padding: 60px 0; text-align: center; color: var(--muted); }
+
+/* materials */
+.dark { background: var(--char); color: var(--cream); }
+.dark .muted { color: var(--cream2); }
+.mats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: #4a4447; border: 1px solid #4a4447; }
+.mat { background: var(--char); padding: clamp(26px, 4vw, 44px); display: grid; gap: 14px; align-content: start; transition: background .4s ease; }
+.mat:hover { background: var(--char2); }
+.mat h3 { font-size: 2rem; }
+.mat p { color: var(--cream2); font-weight: 300; }
+.mat a { margin-top: 8px; font-size: .74rem; letter-spacing: .22em; text-transform: uppercase; text-decoration: none; border-bottom: 1px solid var(--burg3); padding-bottom: 4px; justify-self: start; }
+.mat a:hover { border-color: var(--cream); }
+.swatch { width: 54px; height: 4px; background: var(--burg3); }
+
+/* sizes */
+.sizes { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: clamp(28px, 6vw, 90px); align-items: start; }
+.sizes > * { min-width: 0; }
+.fit { display: grid; gap: 20px; }
+.fit p { color: var(--muted); font-weight: 300; font-size: 1.05rem; }
+.fit dl { margin: 0; display: grid; gap: 0; border-top: 1px solid var(--line); }
+.fit dl div { display: grid; grid-template-columns: 110px 1fr; gap: 14px; padding: 14px 0; border-bottom: 1px solid var(--line); }
+.fit dt { font-size: .72rem; letter-spacing: .22em; text-transform: uppercase; color: var(--burg); padding-top: 3px; font-weight: 500; }
+.fit dd { margin: 0; color: var(--muted); font-weight: 300; }
+.twrap { overflow-x: auto; background: var(--panel); border: 1px solid var(--line); }
+table.sz { width: 100%; border-collapse: collapse; min-width: 420px; font-variant-numeric: tabular-nums; }
+.sz th, .sz td { padding: 16px 18px; text-align: start; border-bottom: 1px solid var(--line); }
+.sz thead th { font-size: .7rem; letter-spacing: .22em; text-transform: uppercase; color: var(--cream); background: var(--burg); font-weight: 500; }
+.sz tbody th { font-family: var(--font-display); font-size: 1.3rem; font-weight: 500; }
+.sz tbody tr:last-child > * { border-bottom: 0; }
+.sz tbody tr:hover > * { background: rgba(91, 19, 39, .06); }
+.unit { margin-top: 12px; font-size: .78rem; letter-spacing: .08em; color: var(--muted); }
+
+/* footer */
+.foot { background: var(--burg); color: var(--cream); padding-block: clamp(54px, 8vw, 90px) calc(34px + env(safe-area-inset-bottom, 0px)); }
+.fgrid { display: grid; grid-template-columns: 1.3fr 1fr 1fr 1.3fr; gap: 36px; }
+.fgrid > * { min-width: 0; }
+.fbrand { font-family: var(--font-display); font-size: clamp(2.6rem, 6vw, 4.4rem); letter-spacing: .3em; line-height: 1; }
+.foot h4 { font-family: var(--font-body); font-size: .72rem; letter-spacing: .26em; text-transform: uppercase; font-weight: 500; color: var(--cream2); margin-bottom: 16px; }
+.foot ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.foot a { text-decoration: none; color: var(--cream); opacity: .88; }
+.foot a:hover { opacity: 1; text-decoration: underline; text-underline-offset: 4px; }
+.foot p { color: var(--cream2); font-weight: 300; }
+.nl { display: flex; margin-top: 14px; border-bottom: 1px solid rgba(242, 237, 234, .5); }
+.nl input { flex: 1; min-width: 0; background: transparent; border: 0; padding: 12px 0; color: var(--cream); font: inherit; }
+.nl input::placeholder { color: var(--cream2); opacity: .8; }
+.nl input:focus-visible { outline: none; }
+.nl:focus-within { border-color: var(--cream); }
+.nl button { background: transparent; border: 0; font-size: .74rem; letter-spacing: .22em; text-transform: uppercase; padding: 0; padding-inline-start: 14px; font-weight: 500; }
+.nlmsg { margin-top: 10px; font-size: .86rem; min-height: 1.4em; }
+.legal { margin-top: 56px; padding-top: 22px; border-top: 1px solid rgba(242, 237, 234, .22); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; font-size: .8rem; color: var(--cream2); }
+
+/* overlay: product view */
+.modal { position: fixed; inset: 0; z-index: 100; display: grid; place-items: center; padding: max(14px, env(safe-area-inset-top, 0px)) max(14px, env(safe-area-inset-right, 0px)) max(14px, env(safe-area-inset-bottom, 0px)) max(14px, env(safe-area-inset-left, 0px)); background: rgba(24, 12, 17, .72); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); animation: fade .35s ease both; }
+@keyframes fade { from { opacity: 0; } to { opacity: 1; } }
+.mcard { position: relative; width: 100%; max-width: 1180px; height: min(92vh, 860px); display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr); background: var(--bg); box-shadow: 0 40px 90px -30px #000; animation: pop .5s var(--ease) both; }
+@keyframes pop { from { opacity: 0; transform: translateY(24px) scale(.985); } to { opacity: 1; transform: none; } }
+.mx { position: absolute; z-index: 5; top: 12px; inset-inline-end: 12px; width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--line); background: var(--bg); font-size: 1.5rem; line-height: 1; display: grid; place-items: center; transition: background .25s ease, color .25s ease; }
+.mx:hover { background: var(--burg); color: var(--cream); border-color: var(--burg); }
+.mview { position: relative; display: grid; grid-template-rows: minmax(0, 1fr) auto; min-height: 0; background: linear-gradient(180deg, #EDEAE8 0%, #CFCAC8 66%, #B3ADAB 100%); }
+.vwrap { position: relative; min-height: 0; outline-offset: -4px; }
+.vctl { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; padding: 14px 18px 18px; border-top: 1px solid rgba(0, 0, 0, .1); background: rgba(232, 229, 227, .7); }
+.angles { display: flex; gap: 6px; flex-wrap: wrap; }
+.angles .chip { border-color: var(--line); padding: 7px 14px; font-size: .72rem; }
+.turn { display: flex; align-items: center; gap: 12px; flex: 1 1 200px; min-width: 0; }
+.turn label { font-size: .68rem; letter-spacing: .22em; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
+.turn output { width: 3.4ch; text-align: end; font-variant-numeric: tabular-nums; font-size: .82rem; color: var(--muted); }
+input[type="range"] { -webkit-appearance: none; appearance: none; flex: 1; min-width: 0; height: 28px; background: transparent; accent-color: var(--burg); }
+input[type="range"]::-webkit-slider-runnable-track { height: 2px; background: var(--muted); }
+input[type="range"]::-moz-range-track { height: 2px; background: var(--muted); }
+input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; width: 20px; height: 20px; margin-top: -9px; border-radius: 50%; background: var(--burg); border: 3px solid var(--bg); box-shadow: 0 0 0 1px var(--burg); }
+input[type="range"]::-moz-range-thumb { width: 14px; height: 14px; border-radius: 50%; background: var(--burg); border: 3px solid var(--bg); box-shadow: 0 0 0 1px var(--burg); }
+.minfo { min-width: 0; overflow-y: auto; padding: clamp(24px, 3.6vw, 44px); padding-top: clamp(56px, 4vw, 44px); display: grid; gap: 22px; align-content: start; }
+.minfo h2 { font-size: clamp(2rem, 3.6vw, 2.9rem); }
+.minfo .pr { font-family: var(--font-display); font-size: 1.9rem; font-variant-numeric: tabular-nums; }
+.minfo .desc { color: var(--muted); font-weight: 300; font-size: 1.04rem; }
+.lbl { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; font-size: .72rem; letter-spacing: .22em; text-transform: uppercase; font-weight: 500; margin-bottom: 10px; }
+.lbl span { color: var(--muted); letter-spacing: .14em; }
+.swatches { display: flex; gap: 12px; flex-wrap: wrap; }
+.swatches button { width: 38px; height: 38px; border-radius: 50%; padding: 0; border: 1px solid rgba(0, 0, 0, .3); box-shadow: 0 0 0 3px transparent; transition: box-shadow .25s ease, transform .25s var(--ease); }
+.swatches button:hover { transform: scale(1.08); }
+.swatches button[aria-pressed="true"] { box-shadow: 0 0 0 3px var(--bg), 0 0 0 4px var(--ink); }
+.sizebtns { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; }
+.sizebtns button { padding: 13px 0; border: 1px solid var(--line); background: transparent; font-size: .9rem; letter-spacing: .1em; font-weight: 500; transition: background .25s ease, color .25s ease, border-color .25s ease; }
+.sizebtns button:hover { border-color: var(--ink); }
+.sizebtns button[aria-pressed="true"] { background: var(--burg); border-color: var(--burg); color: var(--cream); }
+.sizebtns.shake { animation: shake .45s ease; }
+@keyframes shake { 20%, 60% { transform: translateX(-6px); } 40%, 80% { transform: translateX(6px); } }
+.err { color: var(--burg3); font-size: .86rem; min-height: 1.3em; margin-top: 8px; font-weight: 500; }
+.model { font-size: .82rem; color: var(--muted); margin-top: 2px; }
+.acc { border-top: 1px solid var(--line); }
+.acc details { border-bottom: 1px solid var(--line); }
+.acc summary { list-style: none; cursor: pointer; padding: 16px 0; display: flex; justify-content: space-between; gap: 12px; font-size: .74rem; letter-spacing: .22em; text-transform: uppercase; font-weight: 500; }
+.acc summary::-webkit-details-marker { display: none; }
+.acc summary::after { content: "+"; font-size: 1.2rem; line-height: 1; transition: transform .3s var(--ease); }
+.acc details[open] summary::after { transform: rotate(45deg); }
+.acc .body { padding: 0 0 18px; color: var(--muted); font-weight: 300; }
+.acc .twrap { margin-top: 10px; }
+.acc table.sz { min-width: 360px; }
+.acc .sz th, .acc .sz td { padding: 10px 12px; }
+
+/* bag drawer */
+.drawer { position: fixed; inset: 0; z-index: 110; display: flex; justify-content: flex-end; background: rgba(24, 12, 17, .6); animation: fade .3s ease both; }
+.dpanel { width: min(440px, 100%); height: 100%; display: grid; grid-template-rows: auto minmax(0, 1fr) auto; background: var(--bg); padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); padding-right: env(safe-area-inset-right, 0px); animation: slidein .45s var(--ease) both; }
+@keyframes slidein { from { transform: translateX(40px); opacity: 0; } to { transform: none; opacity: 1; } }
+.dhead { display: flex; align-items: center; justify-content: space-between; padding: 20px 24px; background: var(--burg); color: var(--cream); }
+.dhead h2 { font-size: 1.6rem; }
+.dhead .mx { position: static; background: transparent; border-color: rgba(242, 237, 234, .5); color: var(--cream); }
+.dlist { overflow-y: auto; padding: 8px 24px; }
+.item { display: grid; grid-template-columns: 84px minmax(0, 1fr) auto; gap: 16px; padding: 18px 0; border-bottom: 1px solid var(--line); align-items: start; }
+.item .th { aspect-ratio: 4 / 5; background: linear-gradient(180deg, #ECE9E7, #BDB7B5); overflow: hidden; }
+.item .th img { width: 100%; height: 100%; object-fit: cover; }
+.item h3 { font-size: 1.15rem; }
+.item .meta { font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-top: 4px; }
+.item .rm { background: none; border: 0; padding: 6px 0 0; font-size: .72rem; letter-spacing: .18em; text-transform: uppercase; text-decoration: underline; text-underline-offset: 4px; color: var(--muted); }
+.item .rm:hover { color: var(--burg); }
+.item .price { font-size: 1.1rem; }
+.dempty { padding: 60px 0; text-align: center; color: var(--muted); display: grid; gap: 18px; justify-items: center; }
+.dfoot { padding: 20px 24px 24px; border-top: 1px solid var(--line); display: grid; gap: 14px; background: var(--panel); }
+.tot { display: flex; justify-content: space-between; align-items: baseline; font-size: .8rem; letter-spacing: .2em; text-transform: uppercase; }
+.tot b { font-family: var(--font-display); font-size: 1.7rem; letter-spacing: 0; text-transform: none; font-variant-numeric: tabular-nums; font-weight: 500; }
+.cnote { font-size: .84rem; color: var(--muted); min-height: 1.3em; }
+
+.toast { position: fixed; z-index: 120; left: 50%; bottom: calc(22px + env(safe-area-inset-bottom, 0px)); transform: translateX(-50%); display: flex; align-items: center; gap: 18px; max-width: calc(100vw - 32px); padding: 14px 20px; background: var(--char); color: var(--cream); font-size: .9rem; box-shadow: 0 20px 40px -18px #000; animation: rise .5s var(--ease) both; }
+.toast button { background: none; border: 0; padding: 0; text-transform: uppercase; letter-spacing: .18em; font-size: .72rem; text-decoration: underline; text-underline-offset: 4px; white-space: nowrap; }
+
+.sr { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+.ctl { display: flex; align-items: center; gap: 10px; }
+.lang { background: transparent; border: 1px solid rgba(242, 237, 234, .45); border-radius: 999px; padding: 9px 16px; font-size: .78rem; letter-spacing: .12em; font-weight: 500; color: var(--cream); transition: background .25s ease; }
+.lang:hover { background: rgba(242, 237, 234, .12); }
+.pview { position: absolute; inset: 0; touch-action: pan-y; cursor: grab; }
+.pview img { width: 100%; height: 100%; object-fit: cover; display: block; user-select: none; -webkit-user-drag: none; pointer-events: none; }
+:root[lang="ar"] { --font-display: 'Amiri', 'Bodoni Moda', Georgia, serif; --font-body: 'Tajawal', 'Jost', 'Helvetica Neue', Arial, sans-serif; }
+:root[lang="ar"] body { font-size: 1.06rem; line-height: 1.75; }
+:root[lang="ar"] *:not(.brand):not(.fbrand):not(.ghost) { letter-spacing: 0 !important; text-transform: none !important; }
+:root[lang="ar"] h1, :root[lang="ar"] h2, :root[lang="ar"] h3 { line-height: 1.3; }
+:root[lang="ar"] em { font-style: normal; }
+:root[lang="ar"] .hero h1 { line-height: 1.2; }
+:root[dir="rtl"] .nav a::after { transform-origin: right; }
+:root[dir="rtl"] .dpanel { animation-name: slidein-rtl; }
+@keyframes slidein-rtl { from { transform: translateX(-40px); opacity: 0; } to { transform: none; opacity: 1; } }
+
+@media (max-width: 1000px) {
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .fgrid { grid-template-columns: 1fr 1fr; }
+  .mats { grid-template-columns: 1fr; }
+}
+@media (max-width: 860px) {
+  .hero-grid { grid-template-columns: 1fr; }
+  .vcard { max-height: none; max-width: 480px; margin-inline: auto; }
+  .stage { width: 100%; }
+  .sizes { grid-template-columns: 1fr; }
+  .nav { display: none; }
+  .mcard { grid-template-columns: 1fr; grid-template-rows: auto auto; height: min(96vh, 100%); overflow-y: auto; }
+  .mview { height: min(68vh, 620px); }
+  .minfo { overflow: visible; padding-top: 24px; }
+  .mx { position: fixed; top: calc(max(14px, env(safe-area-inset-top, 0px)) + 8px); inset-inline-end: calc(max(14px, env(safe-area-inset-right, 0px)) + 8px); }
+}
+@media (max-width: 560px) {
+  .grid { grid-template-columns: 1fr; }
+  .fgrid { grid-template-columns: 1fr; }
+  .brand { font-size: 1.4rem; }
+  .count { margin-inline-start: 0; width: 100%; }
+  .fit dl div { grid-template-columns: 1fr; gap: 4px; }
+  .item { grid-template-columns: 72px minmax(0, 1fr); }
+  .item .price { grid-column: 2; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+  .ribbon-track { animation: none; }
+  .rv { transform: none; }
+}
+</style>
+
+<header class="top" id="topbar">
+  <div class="in bar">
+    <a class="brand" href="#hero" aria-label="Diva home">DIVA</a>
+    <nav class="nav" aria-label="Main">
+      <a href="#collection">Collection</a>
+      <a href="#fabrics">Fabrics</a>
+      <a href="#fit">Fit &amp; sizes</a>
+    </nav>
+    <div class="ctl"><button class="lang" id="langBtn" type="button" data-dyn>العربية</button><button class="bag" id="bagBtn" type="button" aria-label="Open bag">Bag <b id="bagN">0</b></button></div>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="hero">
+    <div class="ghost" id="ghost" aria-hidden="true">DIVA</div>
+    <div class="in hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow rise">Autumn / Winter 2026 · Concept collection</span>
+        <h1 class="rise d1">Wear the cold like a <em>spotlight.</em></h1>
+        <p class="lead rise d2">Six winter jackets in leather, down and gabardine, cut short or long. Turn each one a full 360° on the model before you choose.</p>
+        <div class="ctas rise d3">
+          <a class="btn" href="#collection">Shop the collection</a>
+          <button class="btn line" type="button" id="heroOpen">Turn this piece</button>
+        </div>
+        <div class="facts rise d4">
+          <div><b>6</b>jackets</div>
+          <div><b>3</b>fabrics</div>
+          <div><b>XS–XL</b>sizes</div>
+        </div>
+      </div>
+      <div class="stage rise d2">
+        <div class="vcard" id="heroCard">
+          <canvas id="heroCv" role="img" aria-label="Rotating 3D model wearing a Diva jacket"></canvas>
+          <div class="pview" id="heroPhoto" hidden><img alt="" decoding="async"></div>
+          <div class="nogl" id="heroNoGl" hidden>The 3D model needs WebGL, which this browser has switched off.</div>
+          <div class="hint">Drag to turn</div>
+        </div>
+        <div class="hmeta">
+          <div class="hcap"><h3 id="heroName" data-dyn>Noir Biker</h3><span id="heroSub" data-dyn>Leather · Short · $890</span></div>
+          <div class="dots" id="heroDots" role="group" aria-label="Featured pieces"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="ribbon" aria-hidden="true">
+    <div class="ribbon-track" id="ribbon" data-dyn></div>
+  </div>
+
+  <section class="sec" id="collection">
+    <div class="in">
+      <div class="sec-head rv">
+        <div>
+          <span class="eyebrow">The collection</span>
+          <h2>Six jackets, <em>every angle.</em></h2>
+        </div>
+        <p class="muted" style="max-width:36ch">Open any piece to turn the model, try each color and pick your size.</p>
+      </div>
+      <div class="filters" role="group" aria-label="Filter jackets">
+        <div class="fgroup" id="fMat"><span>Fabric</span>
+          <button class="chip" type="button" data-v="all" aria-pressed="true">All</button>
+          <button class="chip" type="button" data-v="leather" aria-pressed="false">Leather</button>
+          <button class="chip" type="button" data-v="down" aria-pressed="false">Down</button>
+          <button class="chip" type="button" data-v="gabardine" aria-pressed="false">Gabardine</button>
+        </div>
+        <div class="fgroup" id="fLen"><span>Length</span>
+          <button class="chip" type="button" data-v="all" aria-pressed="true">All</button>
+          <button class="chip" type="button" data-v="short" aria-pressed="false">Short</button>
+          <button class="chip" type="button" data-v="long" aria-pressed="false">Long</button>
+        </div>
+        <div class="count" id="count" data-dyn role="status"></div>
+      </div>
+      <div class="grid" id="grid" data-dyn></div>
+      <p class="empty" id="empty" hidden>No jackets match those filters. Try another fabric or length.</p>
+    </div>
+  </section>
+
+  <section class="sec dark" id="fabrics">
+    <div class="in">
+      <div class="sec-head rv">
+        <div>
+          <span class="eyebrow">Fabrics</span>
+          <h2>Three ways to stay warm</h2>
+        </div>
+        <p class="muted" style="max-width:36ch">Each fabric changes how a jacket looks under light, so the model shows the real finish.</p>
+      </div>
+      <div class="mats rv">
+        <article class="mat"><i class="swatch"></i><h3>Leather</h3><p>Soft nappa with a deep, polished shine. Sharp lines, strong shoulders and a finish that gets better with wear.</p><a href="#collection" data-mat="leather">Shop leather</a></article>
+        <article class="mat"><i class="swatch"></i><h3>Down</h3><p>Channel-quilted shells filled with down and feather. The warmest option, light enough to wear all day.</p><a href="#collection" data-mat="down">Shop down</a></article>
+        <article class="mat"><i class="swatch"></i><h3>Gabardine</h3><p>Dense, water-resistant twill with a clean matte surface. Tailored trenches and crops for the city.</p><a href="#collection" data-mat="gabardine">Shop gabardine</a></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="fit">
+    <div class="in sizes">
+      <div class="fit rv">
+        <div>
+          <span class="eyebrow">Fit &amp; sizes</span>
+          <h2 style="font-size:clamp(2.2rem,5vw,3.6rem);margin-top:12px">Find your <em style="font-style:italic;font-weight:400;color:var(--burg)">size</em></h2>
+        </div>
+        <p>Measure over light clothing and pick the size that matches your bust first. The model is 175 cm tall and wears size S.</p>
+        <dl>
+          <div><dt>Leather</dt><dd>True to size and close through the body. Size up to layer a thick knit.</dd></div>
+          <div><dt>Down</dt><dd>Relaxed and roomy. Take your usual size, or one down for a closer fit.</dd></div>
+          <div><dt>Gabardine</dt><dd>Tailored through the shoulders with space for a knit underneath.</dd></div>
+        </dl>
+      </div>
+      <div class="rv">
+        <div class="twrap" id="sizeTable" data-dyn></div>
+        <p class="unit">Body measurements in centimetres.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="in">
+    <div class="fgrid">
+      <div>
+        <div class="fbrand">DIVA</div>
+        <p style="margin-top:18px;max-width:28ch">Winter jackets for women who like to be seen.</p>
+      </div>
+      <div>
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="#collection" data-mat="leather">Leather</a></li>
+          <li><a href="#collection" data-mat="down">Down</a></li>
+          <li><a href="#collection" data-mat="gabardine">Gabardine</a></li>
+          <li><a href="#collection" data-mat="all">All jackets</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Help</h4>
+        <ul>
+          <li><a href="#fit">Size guide</a></li>
+          <li><a href="#fabrics">Fabric care</a></li>
+          <li><a href="#hero">Back to top</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Stay in touch</h4>
+        <p>New pieces and restocks, once a month.</p>
+        <form class="nl" id="nlForm" novalidate>
+          <label for="nlMail" class="sr">Email address</label>
+          <input id="nlMail" type="email" placeholder="Your email" autocomplete="email">
+          <button type="submit">Join</button>
+        </form>
+        <div class="nlmsg" id="nlMsg" data-dyn role="status"></div>
+      </div>
+    </div>
+    <div class="legal">
+      <span>© 2026 Diva</span>
+      <span>Diva is a concept brand made for design practice. Products and prices are fictional.</span>
+    </div>
+  </div>
+</footer>
+
+<div class="modal" id="modal" hidden role="dialog" aria-modal="true" aria-labelledby="mName">
+  <div class="mcard">
+    <button class="mx" id="mClose" type="button" aria-label="Close">&times;</button>
+    <div class="mview">
+      <div class="vwrap" id="vwrap" tabindex="0" role="group" aria-label="3D model. Drag, or use the left and right arrow keys, to turn it.">
+        <canvas id="mCv"></canvas>
+        <div class="pview" id="mPhoto" hidden><img alt="" decoding="async"></div>
+        <div class="nogl" id="mNoGl" hidden>The 3D model needs WebGL, which this browser has switched off.</div>
+        <div class="hint">Drag to turn · 360°</div>
+      </div>
+      <div class="vctl">
+        <div class="angles" role="group" aria-label="Jump to a view">
+          <button class="chip" type="button" data-a="0">Front</button>
+          <button class="chip" type="button" data-a="40">¾</button>
+          <button class="chip" type="button" data-a="90">Side</button>
+          <button class="chip" type="button" data-a="180">Back</button>
+          <button class="chip" type="button" id="autoBtn" aria-pressed="true">Auto turn</button>
+        </div>
+        <div class="turn">
+          <label for="rot">Rotate</label>
+          <input id="rot" dir="ltr" type="range" min="0" max="359" step="1" value="0">
+          <output id="rotOut" for="rot">0°</output>
+        </div>
+      </div>
+    </div>
+    <div class="minfo">
+      <div>
+        <span class="eyebrow" id="mKind" data-dyn>Leather · Short</span>
+        <h2 id="mName" data-dyn style="margin-top:10px">Noir Biker</h2>
+      </div>
+      <div class="pr" id="mPrice" data-dyn>$890</div>
+      <p class="desc" id="mDesc" data-dyn></p>
+      <div>
+        <div class="lbl">Color <span id="mColor" data-dyn></span></div>
+        <div class="swatches" id="mSwatches" data-dyn role="group" aria-label="Color"></div>
+      </div>
+      <div>
+        <div class="lbl">Size <span id="mSizeLbl" data-dyn>Select a size</span></div>
+        <div class="sizebtns" id="mSizes" data-dyn role="group" aria-label="Size"></div>
+        <div class="err" id="mErr" data-dyn role="alert"></div>
+        <div class="model">Model is 175 cm and wears size S.</div>
+      </div>
+      <button class="btn block" id="addBtn" type="button">Add to bag</button>
+      <div class="acc">
+        <details><summary>Fabric &amp; care</summary><div class="body" id="mCare" data-dyn></div></details>
+        <details><summary>Fit</summary><div class="body" id="mFit" data-dyn></div></details>
+        <details><summary>Size guide</summary><div class="body"><div class="twrap" id="mTable" data-dyn></div></div></details>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="drawer" id="drawer" hidden>
+  <aside class="dpanel" role="dialog" aria-modal="true" aria-labelledby="dTitle">
+    <div class="dhead"><h2 id="dTitle">Your bag</h2><button class="mx" id="dClose" type="button" aria-label="Close bag">&times;</button></div>
+    <div class="dlist" id="dList" data-dyn></div>
+    <div class="dfoot">
+      <div class="tot"><span>Subtotal</span><b id="dTotal" data-dyn>$0</b></div>
+      <button class="btn block" id="checkout" type="button">Checkout</button>
+      <div class="cnote" id="cNote" data-dyn role="status"></div>
+    </div>
+  </aside>
+</div>
+
+<div class="toast" id="toast" data-dyn hidden role="status"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(function () {
+  'use strict';
+  var T = window.THREE;
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- data ---------- */
+  var PRODUCTS = [
+    { id: 'noir', name: 'Noir Biker', mat: 'leather', len: 'short', price: 890,
+      colors: [['Noir', '#17141A'], ['Burgundy', '#5B1327']],
+      desc: 'A sharp cropped biker in soft nappa leather with an off-centre zip and wide lapels. Cut close to the body.' },
+    { id: 'odette', name: 'Odette Leather Coat', mat: 'leather', len: 'long', price: 1450,
+      colors: [['Noir', '#17141A'], ['Cognac', '#8A5632']],
+      desc: 'A belted knee-length leather coat with a deep shawl collar. It moves like a gown and keeps its shape in the wind.' },
+    { id: 'aurelia', name: 'Aurelia Puffer', mat: 'down', len: 'short', price: 620,
+      colors: [['Ivory', '#E9E2D8'], ['Burgundy', '#6B1630'], ['Graphite', '#3A383C']],
+      desc: 'A glossy cropped puffer with horizontal channels and a high funnel neck. Light, very warm and deliberately dramatic.' },
+    { id: 'celeste', name: 'Celeste Down Parka', mat: 'down', len: 'long', price: 980,
+      colors: [['Graphite', '#3A383C'], ['Ivory', '#E9E2D8']],
+      desc: 'A long down parka with a draped hood and a shaped waist. Built for real cold and styled for the evening.' },
+    { id: 'vesper', name: 'Vesper Trench', mat: 'gabardine', len: 'long', price: 740,
+      colors: [['Stone', '#B7A892'], ['Noir', '#1E1C20']],
+      desc: 'The classic trench rebuilt in dense water-resistant gabardine, with a belted waist and broad lapels.' },
+    { id: 'lucienne', name: 'Lucienne Crop', mat: 'gabardine', len: 'short', price: 520,
+      colors: [['Stone', '#B7A892'], ['Burgundy', '#6B1630']],
+      desc: 'A cropped double-breasted jacket in gabardine. Tailored shoulders, a clean hem and room for a knit underneath.' }
+  ];
+  var MAT_NAME = { leather: 'Leather', down: 'Down', gabardine: 'Gabardine' };
+  var CARE = {
+    leather: 'Soft nappa leather outer with a satin lining. Wipe with a dry cloth, hang on a wide hanger and take it to a leather specialist to clean.',
+    down: 'Water-repellent shell filled with down and feather, with rib-knit cuffs. Dry clean, or wash gently and tumble dry with two clean tennis balls.',
+    gabardine: 'Dense cotton-blend twill with a water-repellent finish and a full lining. Dry clean only.'
+  };
+  var FIT = {
+    leather: 'True to size and close through the body. Size up to layer a thick knit.',
+    down: 'Relaxed and roomy. Take your usual size, or one down for a closer fit.',
+    gabardine: 'Tailored through the shoulders with space for a knit. True to size.'
+  };
+  var SIZES = [['XS', 80, 62, 88], ['S', 84, 66, 92], ['M', 88, 70, 96], ['L', 94, 76, 102], ['XL', 100, 82, 108]];
+  var FEATURED = ['noir', 'aurelia', 'vesper'];
+  var money = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
+  function byId(id) { for (var i = 0; i < PRODUCTS.length; i++) if (PRODUCTS[i].id === id) return PRODUCTS[i]; return null; }
+  function $(s) { return document.querySelector(s); }
+  function $$(s) { return Array.prototype.slice.call(document.querySelectorAll(s)); }
+  function el(tag, cls, html) { var e = document.createElement(tag); if (cls) e.className = cls; if (html != null) e.innerHTML = html; return e; }
+
+  /* ---------- 3D: textures, materials ---------- */
+  function C(h) { return new T.Color(h).convertSRGBToLinear(); }
+  var texCache = {};
+  function grain(kind) {
+    if (texCache[kind]) return texCache[kind];
+    var c = document.createElement('canvas'); c.width = c.height = 128;
+    var g = c.getContext('2d'), i;
+    if (kind === 'leather') {
+      g.fillStyle = '#808080'; g.fillRect(0, 0, 128, 128);
+      for (i = 0; i < 2600; i++) { var v = 90 + Math.random() * 90; g.fillStyle = 'rgb(' + v + ',' + v + ',' + v + ')'; g.fillRect(Math.random() * 128, Math.random() * 128, 2, 2); }
+    } else {
+      g.fillStyle = '#888'; g.fillRect(0, 0, 128, 128);
+      g.strokeStyle = '#bbb'; g.lineWidth = 1.4;
+      for (i = -128; i < 256; i += 4) { g.beginPath(); g.moveTo(i, 0); g.lineTo(i + 128, 128); g.stroke(); }
+    }
+    var t = new T.CanvasTexture(c); t.wrapS = t.wrapT = T.RepeatWrapping;
+    if (kind === 'leather') t.repeat.set(14, 11); else t.repeat.set(26, 18);
+    texCache[kind] = t; return t;
+  }
+  function matFor(kind, hex) {
+    var col = C(hex);
+    if (kind === 'leather') return new T.MeshPhysicalMaterial({ color: col, roughness: .36, metalness: 0, clearcoat: .6, clearcoatRoughness: .3, bumpMap: grain('leather'), bumpScale: .02, envMapIntensity: .9, side: T.DoubleSide });
+    if (kind === 'down') return new T.MeshStandardMaterial({ color: col, roughness: .42, metalness: .04, envMapIntensity: .6, side: T.DoubleSide });
+    return new T.MeshStandardMaterial({ color: col, roughness: .9, metalness: 0, bumpMap: grain('twill'), bumpScale: .25, envMapIntensity: .3, side: T.DoubleSide });
+  }
+  var metal = null;
+  function metalMat() { if (!metal) metal = new T.MeshStandardMaterial({ color: C(0x9a9396), metalness: 1, roughness: .28, envMapIntensity: 1.2 }); return metal; }
+
+  /* ---------- 3D: body and jacket geometry ---------- */
+  var BODY = [[0.78, 0.150], [0.88, 0.168], [0.95, 0.172], [1.02, 0.152], [1.08, 0.130], [1.15, 0.136], [1.22, 0.150], [1.27, 0.154], [1.33, 0.152], [1.39, 0.158], [1.43, 0.112], [1.46, 0.062]];
+  function bodyAt(y) {
+    if (y <= BODY[0][0]) return BODY[0][1];
+    for (var i = 1; i < BODY.length; i++) if (y <= BODY[i][0]) { var a = BODY[i - 1], b = BODY[i], t = (y - a[0]) / (b[0] - a[0]); return a[1] + (b[1] - a[1]) * t; }
+    return BODY[BODY.length - 1][1];
+  }
+  function splinePts(tbl, ease, div) {
+    var v = tbl.map(function (p) { return new T.Vector2(p[1] + ease, p[0]); });
+    return new T.SplineCurve(v).getPoints(div);
+  }
+  function radiusAt(pts, y) { for (var i = 0; i < pts.length; i++) if (pts[i].y >= y) return pts[i].x; return pts[pts.length - 1].x; }
+  function lathe(points, mat, scaleZ) { var m = new T.Mesh(new T.LatheGeometry(points, 64), mat); m.scale.z = scaleZ; return m; }
+  function V2(arr) { return arr.map(function (p) { return new T.Vector2(p[0], p[1]); }); }
+
+  var SKIN = 0xc2b6ad;
+  function buildMannequin() {
+    var g = new T.Group();
+    var skin = new T.MeshStandardMaterial({ color: C(SKIN), roughness: .7, metalness: 0, envMapIntensity: .35 });
+    var knit = new T.MeshStandardMaterial({ color: C(0x27232a), roughness: .85, envMapIntensity: .3 });
+    var trs = new T.MeshStandardMaterial({ color: C(0x27232a), roughness: .85, envMapIntensity: .3 });
+    var shoe = new T.MeshStandardMaterial({ color: C(0x1b1819), roughness: .3, metalness: .1, envMapIntensity: .8 });
+    var hair = new T.MeshStandardMaterial({ color: C(0x2a1d1b), roughness: .38, metalness: .05, envMapIntensity: .8, side: T.DoubleSide });
+    g.add(lathe(splinePts(BODY, -0.004, 110), knit, 0.68));
+    var neck = new T.Mesh(new T.CylinderGeometry(0.048, 0.055, 0.16, 24), skin); neck.position.y = 1.5; g.add(neck);
+    var head = new T.Mesh(new T.SphereGeometry(1, 40, 28), skin); head.scale.set(0.082, 0.108, 0.098); head.position.set(0, 1.625, 0.004); g.add(head);
+    var cap = new T.Mesh(new T.SphereGeometry(1, 40, 28, Math.PI, Math.PI, 0, Math.PI * 0.8), hair); cap.scale.set(0.091, 0.118, 0.108); cap.position.set(0, 1.63, -0.008); g.add(cap);
+    var cap2 = new T.Mesh(new T.SphereGeometry(1, 32, 20, 0, Math.PI * 2, 0, Math.PI * 0.34), hair); cap2.scale.set(0.088, 0.118, 0.106); cap2.position.set(0, 1.635, -0.004); g.add(cap2);
+    var bun = new T.Mesh(new T.SphereGeometry(0.042, 20, 14), hair); bun.position.set(0, 1.69, -0.095); g.add(bun);
+    [-1, 1].forEach(function (s) {
+      var leg = new T.Mesh(new T.CylinderGeometry(0.098, 0.056, 0.86, 28), trs); leg.position.set(s * 0.088, 0.5, 0); g.add(leg);
+      var foot = new T.Mesh(new T.SphereGeometry(1, 20, 14), shoe); foot.scale.set(0.05, 0.04, 0.115); foot.position.set(s * 0.09, 0.04, 0.035); g.add(foot);
+      var arm = new T.Group(); arm.position.set(s * 0.205, 1.385, 0); arm.rotation.z = s * 0.2;
+      var a = new T.Mesh(new T.CylinderGeometry(0.04, 0.03, 0.6, 18), skin); a.position.y = -0.3; arm.add(a);
+      var hand = new T.Mesh(new T.SphereGeometry(1, 18, 14), skin); hand.scale.set(0.034, 0.062, 0.026); hand.position.y = -0.64; arm.add(hand);
+      g.add(arm);
+    });
+    return g;
+  }
+
+  function bulgeGeo(geo, seg, amp, off) {
+    var p = geo.attributes.position;
+    for (var i = 0; i < p.count; i++) {
+      var x = p.getX(i), y = p.getY(i), z = p.getZ(i), r = Math.sqrt(x * x + z * z) || 1;
+      var k = (r + amp * Math.abs(Math.sin(Math.PI * (y + off) / seg))) / r;
+      p.setX(i, x * k); p.setZ(i, z * k);
+    }
+    geo.computeVertexNormals();
+  }
+
+  function buildJacket(p, hex) {
+    var g = new T.Group();
+    var mat = matFor(p.mat, hex);
+    var long = p.len === 'long';
+    var hem = long ? 0.56 : 1.0;
+    var ease = { leather: .010, down: .026, gabardine: .016 }[p.mat];
+    var flare = { leather: .2, down: .24, gabardine: .26 }[p.mat];
+    var dz = p.mat === 'down' ? 0.74 : 0.68;
+    var tbl = [], i;
+    if (long) {
+      tbl.push([hem, 0.172 + flare * (0.95 - hem)]);
+      var mid = hem + (0.95 - hem) * 0.5;
+      tbl.push([mid, 0.172 + flare * (0.95 - mid)]);
+      tbl.push([0.9, 0.172 + flare * 0.05]);
+    } else {
+      tbl.push([hem, bodyAt(hem)]);
+    }
+    for (i = 0; i < BODY.length; i++) { if (BODY[i][0] > tbl[tbl.length - 1][0] + 0.015) tbl.push([BODY[i][0], BODY[i][1]]); }
+    var pts = splinePts(tbl, ease, 140);
+    if (p.mat === 'down') pts.forEach(function (q) { q.x += 0.018 * Math.abs(Math.sin(Math.PI * (q.y - hem) / (long ? 0.12 : 0.105))); });
+    var body = lathe(pts, mat, dz); g.add(body);
+    function zf(y) { return radiusAt(pts, y) * dz; }
+
+    /* front closure */
+    var theta = p.id === 'noir' ? 0.3 : 0;
+    var zp = [];
+    for (var y = hem + 0.01; y <= 1.43; y += 0.02) { var r = radiusAt(pts, y) + 0.003; zp.push(new T.Vector3(r * Math.sin(theta), y, r * Math.cos(theta) * dz)); }
+    { var zip = new T.Mesh(new T.TubeGeometry(new T.CatmullRomCurve3(zp), 70, 0.0045, 6, false), metalMat()); g.add(zip); }
+
+    /* sleeves */
+    var L = 0.6, isDown = p.mat === 'down';
+    var rt = isDown ? 0.078 : 0.062, rb = isDown ? 0.062 : 0.047;
+    [-1, 1].forEach(function (s) {
+      var sl = new T.Group(); sl.position.set(s * 0.205, 1.385, 0); sl.rotation.z = s * 0.2;
+      var geo = new T.CylinderGeometry(rt, rb, L, 36, isDown ? 64 : 1, true); geo.translate(0, -L / 2, 0);
+      if (isDown) bulgeGeo(geo, 0.1, 0.014, 0);
+      sl.add(new T.Mesh(geo, mat));
+      var cap = new T.Mesh(new T.SphereGeometry(rt * 1.02, 28, 20), mat); sl.add(cap);
+      var cuffMat = isDown ? new T.MeshStandardMaterial({ color: C(0x2a2629), roughness: .9 }) : mat;
+      var cuff = new T.Mesh(new T.CylinderGeometry(rb + 0.002, rb + 0.002, isDown ? 0.05 : 0.022, 28, 1, true), cuffMat); cuff.position.y = -L + (isDown ? 0.02 : 0.004); sl.add(cuff);
+      if (p.mat === 'gabardine') { var st = new T.Mesh(new T.CylinderGeometry(rb + 0.006, rb + 0.006, 0.03, 28, 1, true), mat); st.position.y = -L + 0.09; sl.add(st); }
+      g.add(sl);
+    });
+
+    /* collars and details by piece */
+    var zc = zf(1.34);
+    if (p.id === 'noir') {
+      var band = lathe(V2([[0.074, 1.43], [0.082, 1.47], [0.086, 1.49]]), mat, 0.86); g.add(band);
+      [-1, 1].forEach(function (s) {
+        var lap = new T.Mesh(new T.BoxGeometry(0.085, 0.16, 0.012), mat); lap.position.set(s * 0.062, 1.33, zc + 0.012); lap.rotation.set(-0.22, 0, -s * 0.38); g.add(lap);
+        var pk = new T.Mesh(new T.BoxGeometry(0.075, 0.004, 0.006), metalMat()); pk.position.set(s * 0.085, 1.07, zf(1.07) + 0.006); pk.rotation.z = -s * 0.35; g.add(pk);
+      });
+    }
+    if (p.id === 'odette' || p.id === 'vesper') {
+      var sh = lathe(V2([[0.078, 1.415], [0.1, 1.455], [0.136, 1.49], [0.152, 1.488], [0.15, 1.47], [0.13, 1.44], [0.118, 1.395]]), mat, 0.9); g.add(sh);
+      [-1, 1].forEach(function (s) {
+        var lp = new T.Mesh(new T.BoxGeometry(0.1, 0.21, 0.01), mat); lp.position.set(s * 0.085, 1.29, zf(1.29) + 0.014); lp.rotation.set(-0.2, 0, -s * 0.55); g.add(lp);
+      });
+      var by = 1.1, br = radiusAt(pts, by) + 0.01;
+      g.add(lathe(V2([[br, by - 0.026], [br + 0.006, by - 0.02], [br + 0.006, by + 0.02], [br, by + 0.026]]), mat, dz));
+      var bk = new T.Mesh(new T.BoxGeometry(0.05, 0.04, 0.008), metalMat()); bk.position.set(0, by, (br + 0.008) * dz); g.add(bk);
+    }
+    if (p.id === 'vesper') {
+      [-1, 1].forEach(function (s) { var ep = new T.Mesh(new T.BoxGeometry(0.085, 0.012, 0.05), mat); ep.position.set(s * 0.15, 1.455, 0); ep.rotation.z = -s * 0.15; g.add(ep); });
+    }
+    if (p.id === 'vesper' || p.id === 'lucienne') {
+      var top = 1.3, bot = hem + (long ? 0.2 : 0.07);
+      for (var by2 = top; by2 >= bot; by2 -= (long ? 0.12 : 0.07)) {
+        [-1, 1].forEach(function (s) {
+          var r2 = radiusAt(pts, by2), th = Math.asin(Math.min(0.9, 0.05 / r2));
+          var b = new T.Mesh(new T.SphereGeometry(0.0125, 14, 10), new T.MeshStandardMaterial({ color: C(0x151215), roughness: .4, metalness: .2 }));
+          b.position.set(s * r2 * Math.sin(th), by2, r2 * Math.cos(th) * dz + 0.004); g.add(b);
+        });
+      }
+      if (p.id === 'lucienne') { var col = lathe(V2([[0.078, 1.415], [0.1, 1.455], [0.128, 1.485], [0.14, 1.48], [0.13, 1.45], [0.118, 1.395]]), mat, 0.9); g.add(col); }
+    }
+    if (p.id === 'aurelia') {
+      var fp = []; for (var yy = 1.4; yy <= 1.575; yy += 0.012) fp.push(new T.Vector2(0.092 - (yy - 1.4) * 0.12 + 0.012 * Math.abs(Math.sin(Math.PI * (yy - 1.4) / 0.045)), yy));
+      g.add(lathe(fp, mat, 0.9));
+    }
+    if (p.id === 'celeste') {
+      var fp2 = []; for (var y3 = 1.4; y3 <= 1.55; y3 += 0.012) fp2.push(new T.Vector2(0.095 - (y3 - 1.4) * 0.1 + 0.012 * Math.abs(Math.sin(Math.PI * (y3 - 1.4) / 0.05)), y3));
+      g.add(lathe(fp2, mat, 0.9));
+      var hood = new T.Mesh(new T.SphereGeometry(0.15, 32, 20, Math.PI, Math.PI, 0, Math.PI * 0.8), mat); hood.position.set(0, 1.5, -0.025); hood.scale.set(1, 0.95, 1.05); g.add(hood);
+      var fur = new T.Mesh(new T.TorusGeometry(0.15, 0.02, 10, 40, Math.PI), new T.MeshStandardMaterial({ color: C(0xe6dfd8), roughness: 1 }));
+      fur.rotation.set(Math.PI * 0.5 - 0.2, 0, Math.PI); fur.position.set(0, 1.5, -0.01); fur.visible = false; g.add(fur);
+      var cy = 1.1, cr = radiusAt(pts, cy) + 0.012;
+      g.add(lathe(V2([[cr, cy - 0.012], [cr + 0.004, cy - 0.006], [cr + 0.004, cy + 0.006], [cr, cy + 0.012]]), new T.MeshStandardMaterial({ color: C(0x1b181a), roughness: .6 }), dz));
+    }
+    return g;
+  }
+
+  function disposeGroup(g) {
+    g.traverse(function (o) { if (o.geometry) o.geometry.dispose(); if (o.material && o.material !== metal && o.material.dispose) o.material.dispose(); });
+  }
+
+  function makeEnv(renderer) {
+    var pm = new T.PMREMGenerator(renderer);
+    var s = new T.Scene(); s.background = new T.Color(0x2c2729);
+    function box(w, h, x, y, z, v) {
+      var m = new T.Mesh(new T.PlaneGeometry(w, h), new T.MeshBasicMaterial({ color: new T.Color().setScalar(v), side: T.DoubleSide }));
+      m.position.set(x, y, z); m.lookAt(0, 0, 0); s.add(m);
+    }
+    box(8, 3, 0, 6, 2, 6); box(3, 7, -6, 2, 3, 4); box(3, 7, 6, 2, 3, 2.5); box(10, 2, 0, 3, -6, 3.5); box(10, 4, 0, -4, 3, .5);
+    var tex = pm.fromScene(s, 0.04).texture; pm.dispose(); return tex;
+  }
+
+  /* ---------- 3D: viewer ---------- */
+  function Viewer(canvas, opts) {
+    opts = opts || {};
+    this.canvas = canvas || document.createElement('canvas');
+    this.fixed = opts.size || null;
+    this.rot = 0.4; this.vel = 0; this.auto = !reduce && opts.auto !== false; this.drag = false; this.tween = null;
+    this.active = false; this.looping = false; this.popAt = 0; this.jacket = null; this.onRot = null; this.last = 0; this.onUser = null;
+    try {
+      this.renderer = new T.WebGLRenderer({ canvas: this.canvas, antialias: true, alpha: true, powerPreference: 'high-performance' });
+    } catch (e) { this.failed = true; return; }
+    var r = this.renderer;
+    r.setPixelRatio(this.fixed ? 1 : Math.min(window.devicePixelRatio || 1, 2));
+    r.outputEncoding = T.sRGBEncoding; r.toneMapping = T.ACESFilmicToneMapping; r.toneMappingExposure = 1.0;
+    r.setClearColor(0x000000, 0);
+    this.scene = new T.Scene();
+    this.scene.environment = makeEnv(r);
+    this.camera = new T.PerspectiveCamera(26, 1, 0.1, 50);
+    var sc = this.scene;
+    sc.add(new T.HemisphereLight(0xffffff, 0x6a6264, .28));
+    var key = new T.DirectionalLight(0xfff3ee, 1.6); key.position.set(2.5, 3.6, 3); sc.add(key);
+    var fill = new T.DirectionalLight(0xdfe4ee, .45); fill.position.set(-3, 2, 1.5); sc.add(fill);
+    var rim = new T.DirectionalLight(0xffd6e0, 1.1); rim.position.set(0, 3, -3.5); sc.add(rim);
+    var plinth = new T.Mesh(new T.CylinderGeometry(0.46, 0.5, 0.03, 64), new T.MeshStandardMaterial({ color: C(0x8b8486), roughness: .35, metalness: .3, envMapIntensity: 1 }));
+    plinth.position.y = -0.015; sc.add(plinth);
+    var sh = document.createElement('canvas'); sh.width = sh.height = 128;
+    var sg = sh.getContext('2d'), gr = sg.createRadialGradient(64, 64, 4, 64, 64, 62);
+    gr.addColorStop(0, 'rgba(20,8,14,.55)'); gr.addColorStop(1, 'rgba(20,8,14,0)'); sg.fillStyle = gr; sg.fillRect(0, 0, 128, 128);
+    var shadow = new T.Mesh(new T.PlaneGeometry(1.5, 1.5), new T.MeshBasicMaterial({ map: new T.CanvasTexture(sh), transparent: true, depthWrite: false }));
+    shadow.rotation.x = -Math.PI / 2; shadow.position.y = 0.003; sc.add(shadow);
+    this.pivot = new T.Group(); this.pivot.add(buildMannequin()); sc.add(this.pivot);
+    if (!this.fixed) this.bind();
+    this.resize();
+  }
+  Viewer.prototype.bind = function () {
+    var c = this.canvas, s = this, lx = 0;
+    c.addEventListener('pointerdown', function (e) { s.drag = true; s.auto = false; s.tween = null; s.vel = 0; lx = e.clientX; try { c.setPointerCapture(e.pointerId); } catch (x) {} if (s.onUser) s.onUser(); });
+    c.addEventListener('pointermove', function (e) { if (!s.drag) return; var dx = e.clientX - lx; lx = e.clientX; s.rot += dx * 0.012; s.vel = dx * 0.012; });
+    var end = function () { s.drag = false; };
+    c.addEventListener('pointerup', end); c.addEventListener('pointercancel', end);
+  };
+  Viewer.prototype.resize = function () {
+    if (this.failed) return;
+    var w, h;
+    if (this.fixed) { w = this.fixed[0]; h = this.fixed[1]; }
+    else { w = this.canvas.clientWidth; h = this.canvas.clientHeight; }
+    if (!w || !h) return;
+    if (w === this.w && h === this.h) return;
+    this.w = w; this.h = h;
+    this.renderer.setSize(w, h, false);
+    this.camera.aspect = w / h;
+    var tan = Math.tan(13 * Math.PI / 180), d = Math.max(1.06 / tan, 0.58 / (tan * (w / h)));
+    this.camera.position.set(0, 1.12, d);
+    this.camera.lookAt(0, 0.88, 0);
+    this.camera.updateProjectionMatrix();
+  };
+  Viewer.prototype.setProduct = function (p, ci, instant) {
+    if (this.failed) return;
+    if (this.jacket) { this.pivot.remove(this.jacket); disposeGroup(this.jacket); }
+    this.jacket = buildJacket(p, p.colors[ci][1]);
+    this.pivot.add(this.jacket);
+    this.popAt = instant || reduce ? 0 : performance.now();
+    if (!this.looping) this.frame(performance.now());
+  };
+  Viewer.prototype.turnTo = function (deg) {
+    var to = deg * Math.PI / 180, d = ((to - this.rot) % (Math.PI * 2) + Math.PI * 3) % (Math.PI * 2) - Math.PI;
+    this.auto = false; this.vel = 0;
+    if (reduce) { this.rot += d; return; }
+    this.tween = { from: this.rot, to: this.rot + d, start: performance.now(), dur: 700 };
+  };
+  Viewer.prototype.frame = function (t) {
+    if (this.failed) return;
+    this.resize();
+    var dt = Math.min(0.05, (t - (this.last || t)) / 1000); this.last = t;
+    if (this.tween) {
+      var k = Math.min(1, (t - this.tween.start) / this.tween.dur), e = k < .5 ? 4 * k * k * k : 1 - Math.pow(-2 * k + 2, 3) / 2;
+      this.rot = this.tween.from + (this.tween.to - this.tween.from) * e;
+      if (k >= 1) this.tween = null;
+    } else if (!this.drag) {
+      if (this.auto) this.rot += dt * 0.42;
+      else if (Math.abs(this.vel) > 0.0005) { this.rot += this.vel; this.vel *= 0.93; }
+    }
+    this.pivot.rotation.y = this.rot;
+    if (this.jacket) {
+      var pk = this.popAt ? Math.min(1, (t - this.popAt) / 500) : 1, s = 0.94 + 0.06 * (1 - Math.pow(1 - pk, 3));
+      this.jacket.scale.set(s, s, s);
+    }
+    this.renderer.render(this.scene, this.camera);
+    if (this.onRot) this.onRot(this.rot);
+  };
+  Viewer.prototype.setActive = function (on) {
+    if (this.failed) return;
+    this.active = on;
+    if (on && !this.looping) {
+      this.looping = true; this.last = performance.now();
+      var s = this, loop = function (t) { if (!s.active) { s.looping = false; return; } s.frame(t); requestAnimationFrame(loop); };
+      requestAnimationFrame(loop);
+    }
+  };
+  Viewer.prototype.still = function (deg) {
+    this.rot = deg * Math.PI / 180; this.popAt = 0; this.last = 0;
+    this.frame(performance.now());
+    return this.canvas.toDataURL('image/png');
+  };
+
+  /* ---------- photos (optional) ---------- */
+  /* Real photos replace the 3D model for a piece. Key: 'productId:colorIndex'. Value: frames around the body, front first,
+     e.g. [front, three-quarter, side, back, ...]. Missing keys fall back to the 3D model. */
+  var PHOTOS = window.DIVA_PHOTOS || {};
+  function framesOf(p, ci) { var f = PHOTOS[p.id + ':' + ci]; return f && f.length ? f : null; }
+  var TAU = Math.PI * 2;
+
+  function PhotoViewer(box) {
+    this.box = box; this.img = box.querySelector('img'); this.frames = []; this.idx = -1;
+    this.rot = 0; this.vel = 0; this.auto = !reduce; this.drag = false; this.tween = null;
+    this.active = false; this.looping = false; this.last = 0; this.onRot = null; this.onUser = null; this.failed = false;
+    var s = this, lx = 0;
+    box.addEventListener('pointerdown', function (e) { s.drag = true; s.auto = false; s.tween = null; s.vel = 0; lx = e.clientX; try { box.setPointerCapture(e.pointerId); } catch (x) {} if (s.onUser) s.onUser(); });
+    box.addEventListener('pointermove', function (e) { if (!s.drag) return; var dx = e.clientX - lx; lx = e.clientX; s.rot += dx * 0.012; s.vel = dx * 0.012; });
+    var end = function () { s.drag = false; };
+    box.addEventListener('pointerup', end); box.addEventListener('pointercancel', end);
+  }
+  PhotoViewer.prototype.setFrames = function (f) {
+    this.frames = f; this.idx = -1;
+    f.forEach(function (u) { var i = new Image(); i.src = u; });
+    if (!this.looping) this.frame(performance.now());
+  };
+  PhotoViewer.prototype.turnTo = Viewer.prototype.turnTo;
+  PhotoViewer.prototype.setActive = Viewer.prototype.setActive;
+  PhotoViewer.prototype.frame = function (t) {
+    var dt = Math.min(0.05, (t - (this.last || t)) / 1000); this.last = t;
+    if (this.tween) {
+      var k = Math.min(1, (t - this.tween.start) / this.tween.dur), e = k < .5 ? 4 * k * k * k : 1 - Math.pow(-2 * k + 2, 3) / 2;
+      this.rot = this.tween.from + (this.tween.to - this.tween.from) * e;
+      if (k >= 1) this.tween = null;
+    } else if (!this.drag) {
+      if (this.auto) this.rot += dt * 0.35;
+      else if (Math.abs(this.vel) > 0.0005) { this.rot += this.vel; this.vel *= 0.93; }
+    }
+    var n = this.frames.length;
+    if (n) {
+      var k2 = Math.round((((this.rot % TAU) + TAU) % TAU) / TAU * n) % n;
+      if (k2 !== this.idx) { this.idx = k2; this.img.src = this.frames[k2]; }
+    }
+    if (this.onRot) this.onRot(this.rot);
+  };
+
+  /* ---------- thumbnails ---------- */
+  var thumbV = null, thumbs = {}, thumbQueue = [], thumbBusy = false;
+  function thumbKey(p, ci) { return p.id + ':' + ci; }
+  function ensureThumbV() { if (!thumbV && T) thumbV = new Viewer(null, { size: [520, 650] }); return thumbV; }
+  function thumbNow(p, ci) {
+    var k = thumbKey(p, ci); if (thumbs[k]) return thumbs[k];
+    var v = ensureThumbV(); if (!v || v.failed) return '';
+    v.setProduct(p, ci, true); thumbs[k] = v.still(28); return thumbs[k];
+  }
+  function thumbSrc(p, ci) { var f = framesOf(p, ci); return f ? f[0] : thumbNow(p, ci); }
+  function queueThumb(p, ci, img) { thumbQueue.push([p, ci, img]); if (!thumbBusy) pump(); }
+  function pump() {
+    thumbBusy = true;
+    var job = thumbQueue.shift();
+    if (!job) { thumbBusy = false; return; }
+    var u = thumbNow(job[0], job[1]);
+    if (u) { job[2].onload = function () { this.classList.remove('wait'); }; job[2].src = u; }
+    setTimeout(pump, 16);
+  }
+
+  /* ---------- language ---------- */
+  var AR = {
+    'Collection': 'المجموعة', 'Fabrics': 'الخامات', 'Fit & sizes': 'المقاسات', 'Bag': 'السلة',
+    'Autumn / Winter 2026 · Concept collection': 'خريف / شتاء 2026 · مجموعة تجريبية',
+    'Wear the cold like a': 'ارتدي الشتاء كأنك', 'spotlight.': 'تحت الأضواء.',
+    'Six winter jackets in leather, down and gabardine, cut short or long. Turn each one a full 360° on the model before you choose.': 'ست جواكت شتوية من الجلد والريش والجبردين، بقصّات قصيرة وطويلة. لفّي كل جاكيت 360 درجة على الموديل قبل أن تختاري.',
+    'Shop the collection': 'تسوّقي المجموعة', 'Turn this piece': 'لفّي هذه القطعة',
+    'jackets': 'جواكت', 'fabrics': 'خامات', 'sizes': 'مقاسات',
+    'Drag to turn': 'اسحبي للتدوير', 'Drag to turn · 360°': 'اسحبي للتدوير · 360°',
+    'The 3D model needs WebGL, which this browser has switched off.': 'العرض ثلاثي الأبعاد يحتاج WebGL وهو معطّل في هذا المتصفح.',
+    'The collection': 'المجموعة', 'Six jackets,': 'ست جواكت،', 'every angle.': 'من كل زاوية.',
+    'Open any piece to turn the model, try each color and pick your size.': 'افتحي أي قطعة لتدوير الموديل وتجربة الألوان واختيار مقاسك.',
+    'Filter jackets': 'تصفية الجواكت', 'Fabric': 'الخامة', 'All': 'الكل', 'Leather': 'جلد', 'Down': 'ريش', 'Gabardine': 'جبردين',
+    'Length': 'الطول', 'Short': 'قصير', 'Long': 'طويل',
+    'No jackets match those filters. Try another fabric or length.': 'لا توجد جواكت تطابق هذا الاختيار. جرّبي خامة أو طولًا آخر.',
+    'Three ways to stay warm': 'ثلاث طرق لتبقي دافئة',
+    'Each fabric changes how a jacket looks under light, so the model shows the real finish.': 'كل خامة تغيّر مظهر الجاكيت تحت الضوء، لذلك يعرض الموديل الملمس الحقيقي.',
+    'Soft nappa with a deep, polished shine. Sharp lines, strong shoulders and a finish that gets better with wear.': 'جلد ناعم بلمعة عميقة. خطوط حادة وأكتاف قوية وملمس يزداد جمالًا مع الاستخدام.',
+    'Channel-quilted shells filled with down and feather. The warmest option, light enough to wear all day.': 'طبقة خارجية مبطّنة بقنوات ومحشوّة بالريش. الخيار الأدفأ، وخفيف بما يكفي لارتدائه طوال اليوم.',
+    'Dense, water-resistant twill with a clean matte surface. Tailored trenches and crops for the city.': 'نسيج كثيف مقاوم للماء بسطح مطفي أنيق. ترنشات وجواكت قصيرة بقصّة مفصّلة للمدينة.',
+    'Shop leather': 'تسوّقي الجلد', 'Shop down': 'تسوّقي الريش', 'Shop gabardine': 'تسوّقي الجبردين',
+    'Find your': 'اعثري على', 'size': 'مقاسك',
+    'Measure over light clothing and pick the size that matches your bust first. The model is 175 cm tall and wears size S.': 'قيسي فوق ملابس خفيفة واختاري المقاس الذي يناسب محيط الصدر أولًا. طول الموديل 175 سم وترتدي مقاس S.',
+    'True to size and close through the body. Size up to layer a thick knit.': 'مقاس طبيعي وقريب من الجسم. اختاري مقاسًا أكبر إن أردتِ ارتداء كنزة سميكة تحته.',
+    'Relaxed and roomy. Take your usual size, or one down for a closer fit.': 'فضفاض ومريح. اختاري مقاسك المعتاد، أو مقاسًا أصغر لقصّة أقرب.',
+    'Tailored through the shoulders with space for a knit. True to size.': 'مفصّل عند الأكتاف مع مساحة لكنزة تحته. مقاس طبيعي.',
+    'Tailored through the shoulders with space for a knit underneath.': 'مفصّل عند الأكتاف مع مساحة لكنزة تحته.',
+    'Body measurements in centimetres.': 'قياسات الجسم بالسنتيمتر.',
+    'Winter jackets for women who like to be seen.': 'جواكت شتوية لنساء يحببن أن يُلاحَظن.',
+    'Shop': 'تسوّقي', 'All jackets': 'كل الجواكت', 'Help': 'المساعدة', 'Size guide': 'دليل المقاسات', 'Fabric care': 'العناية بالخامات',
+    'Back to top': 'العودة للأعلى', 'Stay in touch': 'ابقي على تواصل', 'New pieces and restocks, once a month.': 'قطع جديدة وإعادة توفير، مرة شهريًا.',
+    'Join': 'اشتركي', 'Your email': 'بريدك الإلكتروني', 'Email address': 'البريد الإلكتروني',
+    'Diva is a concept brand made for design practice. Products and prices are fictional.': 'ديفا علامة تجريبية صُنعت للتدريب على التصميم. المنتجات والأسعار خيالية.',
+    'Close': 'إغلاق', 'Jump to a view': 'انتقلي إلى زاوية',
+    '3D model. Drag, or use the left and right arrow keys, to turn it.': 'نموذج ثلاثي الأبعاد. اسحبي أو استخدمي مفتاحي السهم الأيمن والأيسر لتدويره.',
+    'Front': 'أمام', 'Side': 'جانب', 'Back': 'خلف', 'Auto turn': 'دوران تلقائي', 'Rotate': 'تدوير',
+    'Color': 'اللون', 'Size': 'المقاس', 'Model is 175 cm and wears size S.': 'طول الموديل 175 سم وترتدي مقاس S.',
+    'Add to bag': 'أضيفي إلى السلة', 'Fabric & care': 'الخامة والعناية', 'Fit': 'القصّة',
+    'Your bag': 'سلتك', 'Close bag': 'إغلاق السلة', 'Subtotal': 'المجموع', 'Checkout': 'إتمام الشراء',
+    'Open bag': 'فتح السلة', 'Diva home': 'ديفا، الصفحة الرئيسية', 'Main': 'القائمة الرئيسية', 'Featured pieces': 'قطع مميزة',
+    'Rotating 3D model wearing a Diva jacket': 'موديل ثلاثي الأبعاد يدور مرتديًا جاكيت من ديفا',
+    'Noir': 'أسود', 'Burgundy': 'برجندي', 'Cognac': 'كونياك', 'Ivory': 'عاجي', 'Graphite': 'جرافيت', 'Stone': 'رملي',
+    'Bust': 'الصدر', 'Waist': 'الخصر', 'Hip': 'الأرداف',
+    'Select a size': 'اختاري مقاسًا', 'Select a size to add this jacket to your bag.': 'اختاري مقاسًا لإضافة هذا الجاكيت إلى السلة.',
+    'View bag': 'عرض السلة', 'Remove': 'إزالة', 'Your bag is empty.': 'سلتك فارغة.', 'Browse the collection': 'تصفّحي المجموعة',
+    'View 360°': 'عرض 360°',
+    'Diva is a concept store, so checkout is not connected.': 'ديفا متجر تجريبي، لذلك لا يعمل الدفع.',
+    'Enter a valid email address.': 'أدخلي بريدًا إلكترونيًا صحيحًا.',
+    'Thank you. Diva is a concept site, so nothing was saved.': 'شكرًا لك. ديفا موقع تجريبي، لذلك لم يُحفظ شيء.',
+    'Short and long cuts': 'قصّات قصيرة وطويلة', 'Sizes XS to XL': 'مقاسات من XS إلى XL', 'Turn every jacket 360°': 'لفّي كل جاكيت 360°',
+    'Switch to English': 'Switch to English'
+  };
+  AR[CARE.leather] = 'طبقة خارجية من الجلد الناعم مع بطانة ساتان. امسحيه بقطعة جافة، علّقيه على علّاقة عريضة وأعطيه لمختص تنظيف الجلود.';
+  AR[CARE.down] = 'قشرة مقاومة للماء بحشوة ريش، مع أساور مضلّعة. تنظيف جاف، أو غسيل لطيف وتجفيف مع كرتين نظيفتين.';
+  AR[CARE.gabardine] = 'نسيج قطني كثيف مقاوم للماء مع بطانة كاملة. تنظيف جاف فقط.';
+  var P_AR = {
+    noir: { name: 'نوار بايكر', desc: 'جاكيت بايكر قصير بحدّة، من جلد ناعم بسحّاب مائل وطيات عريضة. قصّة قريبة من الجسم.' },
+    odette: { name: 'معطف أوديت الجلد', desc: 'معطف جلد بطول الركبة مع حزام وياقة شال عميقة. ينساب كالفستان ويحافظ على شكله في الرياح.' },
+    aurelia: { name: 'أوريليا بافر', desc: 'جاكيت بافر قصير لامع بقنوات أفقية ورقبة عالية. خفيف ودافئ جدًا وبحضور درامي.' },
+    celeste: { name: 'باركا سيليست بالريش', desc: 'باركا طويلة بحشوة الريش مع قبّعة منسدلة وخصر مشدود. صُنعت للبرد الحقيقي ومناسبة للسهرات.' },
+    vesper: { name: 'ترنش فيسبر', desc: 'الترنش الكلاسيكي بجبردين كثيف مقاوم للماء، مع حزام عند الخصر وطيات عريضة.' },
+    lucienne: { name: 'لوسيان كروب', desc: 'جاكيت قصير بصفّين من الأزرار من الجبردين. أكتاف مفصّلة وحافة نظيفة ومساحة لكنزة تحته.' }
+  };
+  PRODUCTS.forEach(function (p) { p.ar = P_AR[p.id]; });
+
+  var lang = 'en';
+  try { lang = localStorage.getItem('diva-lang') || ''; } catch (e) {}
+  if (lang !== 'ar' && lang !== 'en') lang = (navigator.language || '').toLowerCase().indexOf('ar') === 0 ? 'ar' : 'en';
+  function isAr() { return lang === 'ar'; }
+  function t(s) { return lang === 'ar' && AR[s] ? AR[s] : s; }
+  function pName(p) { return isAr() ? p.ar.name : p.name; }
+  function pDesc(p) { return isAr() ? p.ar.desc : p.desc; }
+  function matN(p) { return t(MAT_NAME[p.mat]); }
+  function lenN(p) { return t(p.len === 'long' ? 'Long' : 'Short'); }
+  function piecesText(n) { if (!isAr()) return n + (n === 1 ? ' piece' : ' pieces'); return n === 1 ? 'قطعة واحدة' : n === 2 ? 'قطعتان' : n + (n <= 10 ? ' قطع' : ' قطعة'); }
+
+  function translateStatic() {
+    var ar = isAr();
+    var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, { acceptNode: function (n) {
+      var p = n.parentNode;
+      if (!p || p.nodeName === 'SCRIPT' || p.nodeName === 'STYLE') return NodeFilter.FILTER_REJECT;
+      if (p.closest && p.closest('[data-dyn]')) return NodeFilter.FILTER_REJECT;
+      return n.nodeValue.trim() ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+    } });
+    var nodes = []; while (walker.nextNode()) nodes.push(walker.currentNode);
+    nodes.forEach(function (n) {
+      if (n.__en === undefined) n.__en = n.nodeValue;
+      var raw = n.__en, key = raw.trim().replace(/\s+/g, ' ');
+      n.nodeValue = ar && AR[key] ? raw.replace(raw.trim(), function () { return AR[key]; }) : raw;
+    });
+    $$('[aria-label],[placeholder]').forEach(function (e) {
+      if (e.closest('[data-dyn]')) return;
+      ['aria-label', 'placeholder'].forEach(function (a) {
+        if (!e.hasAttribute(a)) return;
+        e.__en = e.__en || {};
+        if (e.__en[a] === undefined) e.__en[a] = e.getAttribute(a);
+        var v = e.__en[a];
+        e.setAttribute(a, ar && AR[v] ? AR[v] : v);
+      });
+    });
+  }
+
+  function sizeTable() {
+    var h = '<table class="sz"><thead><tr><th scope="col">' + t('Size') + '</th><th scope="col">' + t('Bust') + '</th><th scope="col">' + t('Waist') + '</th><th scope="col">' + t('Hip') + '</th></tr></thead><tbody>';
+    SIZES.forEach(function (s) { h += '<tr><th scope="row">' + s[0] + '</th><td>' + s[1] + '</td><td>' + s[2] + '</td><td>' + s[3] + '</td></tr>'; });
+    return h + '</tbody></table>';
+  }
+  function renderRibbon() {
+    var words = ['Leather', 'Down', 'Gabardine', 'Short and long cuts', 'Sizes XS to XL', 'Turn every jacket 360°'];
+    var one = words.map(function (w) { return '<span>' + t(w) + '</span>'; }).join('');
+    var h = one + one + one + one; $('#ribbon').innerHTML = h + h;
+  }
+
+  /* ---------- shop UI ---------- */
+  var filter = { mat: 'all', len: 'all' };
+  var grid = $('#grid');
+  function renderGrid() {
+    var list = PRODUCTS.filter(function (p) { return (filter.mat === 'all' || p.mat === filter.mat) && (filter.len === 'all' || p.len === filter.len); });
+    grid.innerHTML = '';
+    $('#empty').hidden = list.length > 0;
+    $('#count').textContent = piecesText(list.length);
+    list.forEach(function (p, i) {
+      var card = el('article', 'card'); card.style.animationDelay = (i * 70) + 'ms';
+      var ci = 0, nm = pName(p);
+      var btn = el('button', 'open'); btn.type = 'button';
+      btn.setAttribute('aria-label', isAr() ? 'عرض ' + nm + ' بزاوية 360 درجة' : 'View ' + nm + ' in 360 degrees');
+      var shot = el('div', 'shot');
+      shot.appendChild(el('span', 'tag', matN(p)));
+      var img = el('img', 'wait'); img.alt = isAr() ? nm + ' على الموديل' : nm + ' on the model'; img.width = 520; img.height = 650; shot.appendChild(img);
+      shot.appendChild(el('span', 'view360', t('View 360°')));
+      btn.appendChild(shot);
+      var info = el('div', 'cinfo');
+      var l = el('div'); l.appendChild(el('h3', '', nm)); l.appendChild(el('div', 'sub', matN(p) + ' · ' + lenN(p)));
+      info.appendChild(l); info.appendChild(el('div', 'price', money.format(p.price)));
+      btn.appendChild(info);
+      btn.addEventListener('click', function () { openModal(p.id, ci); });
+      card.appendChild(btn);
+      var dots = el('div', 'cdots'); dots.setAttribute('role', 'group'); dots.setAttribute('aria-label', (isAr() ? 'ألوان ' : 'Colors for ') + nm);
+      p.colors.forEach(function (c, idx) {
+        var b = el('button'); b.type = 'button'; b.style.background = c[1]; b.title = t(c[0]); b.setAttribute('aria-label', t(c[0])); b.setAttribute('aria-pressed', idx === 0 ? 'true' : 'false');
+        b.addEventListener('click', function () {
+          ci = idx;
+          Array.prototype.forEach.call(dots.children, function (x, j) { x.setAttribute('aria-pressed', j === idx ? 'true' : 'false'); });
+          var u = thumbSrc(p, idx); if (u) img.src = u;
+        });
+        dots.appendChild(b);
+      });
+      card.appendChild(dots);
+      grid.appendChild(card);
+      var f0 = framesOf(p, 0);
+      if (f0) { img.onload = function () { this.classList.remove('wait'); }; img.src = f0[0]; }
+      else if (T) queueThumb(p, 0, img); else img.classList.remove('wait');
+    });
+  }
+  function setFilter(group, v) {
+    filter[group] = v;
+    Array.prototype.forEach.call($(group === 'mat' ? '#fMat' : '#fLen').querySelectorAll('.chip'), function (c) { c.setAttribute('aria-pressed', c.dataset.v === v ? 'true' : 'false'); });
+    renderGrid();
+  }
+  ['mat', 'len'].forEach(function (g) {
+    $(g === 'mat' ? '#fMat' : '#fLen').addEventListener('click', function (e) { var c = e.target.closest('.chip'); if (c) setFilter(g, c.dataset.v); });
+  });
+  $$('[data-mat]').forEach(function (a) {
+    a.addEventListener('click', function () { setFilter('mat', a.dataset.mat); if (a.dataset.mat === 'all') setFilter('len', 'all'); });
+  });
+
+  /* ---------- hero viewer ---------- */
+  var heroCv = $('#heroCv'), heroPh = $('#heroPhoto'), hero3 = null, heroPv = null, heroView = null, heroVisible = true, heroIdx = 0;
+  function heroCaption() {
+    var p = byId(FEATURED[heroIdx]);
+    $('#heroName').textContent = pName(p);
+    $('#heroSub').textContent = matN(p) + ' · ' + lenN(p) + ' · ' + money.format(p.price);
+  }
+  function renderHeroDots() {
+    var dots = $('#heroDots'); dots.innerHTML = '';
+    FEATURED.forEach(function (id, i) {
+      var b = el('button', '', '<i></i>'); b.type = 'button'; b.setAttribute('aria-label', (isAr() ? 'عرض ' : 'Show ') + pName(byId(id))); b.setAttribute('aria-pressed', i === heroIdx ? 'true' : 'false');
+      b.addEventListener('click', function () {
+        heroIdx = i; Array.prototype.forEach.call(dots.children, function (x, j) { x.setAttribute('aria-pressed', j === i ? 'true' : 'false'); });
+        heroCaption(); mountHero(false);
+      });
+      dots.appendChild(b);
+    });
+  }
+  function mountHero(instant) {
+    var p = byId(FEATURED[heroIdx]), fr = framesOf(p, 0);
+    if (!fr && heroView && heroView === hero3) { hero3.setProduct(p, 0, instant); return; }
+    if (hero3 && !hero3.failed) hero3.setActive(false);
+    if (heroPv) heroPv.setActive(false);
+    if (fr) {
+      if (!heroPv) heroPv = new PhotoViewer(heroPh);
+      heroPh.hidden = false; heroCv.hidden = true; $('#heroNoGl').hidden = true;
+      heroPv.rot = 0; heroPv.setFrames(fr); heroView = heroPv;
+    } else {
+      heroPh.hidden = true;
+      if (T && !hero3) hero3 = new Viewer(heroCv);
+      if (hero3 && !hero3.failed) { heroCv.hidden = false; $('#heroNoGl').hidden = true; hero3.setProduct(p, 0, instant); heroView = hero3; }
+      else { $('#heroNoGl').hidden = false; heroCv.hidden = true; heroView = null; }
+    }
+    if (heroView) heroView.setActive(heroVisible && !document.hidden);
+  }
+  $('#heroOpen').addEventListener('click', function () { openModal(FEATURED[heroIdx], 0); });
+
+  /* ---------- product view ---------- */
+  var modal = $('#modal'), mv3 = null, mpv = null, view = null, cur = { p: null, ci: 0, size: null }, opener = null;
+  var rot = $('#rot'), rotOut = $('#rotOut'), autoBtn = $('#autoBtn');
+  function syncRot(r) {
+    var d = Math.round(((r * 180 / Math.PI) % 360 + 360) % 360);
+    if (document.activeElement !== rot) rot.value = d;
+    rotOut.textContent = d + '°';
+  }
+  function setAuto(on) { if (view) view.auto = on && !reduce; autoBtn.setAttribute('aria-pressed', on && !reduce ? 'true' : 'false'); }
+  function sizeLabel() {
+    if (!cur.size) return t('Select a size');
+    var s = SIZES.filter(function (x) { return x[0] === cur.size; })[0];
+    return isAr() ? 'المقاس ' + s[0] + ' · الصدر ' + s[1] + ' سم' : 'Size ' + s[0] + ' · bust ' + s[1] + ' cm';
+  }
+  function fillModal() {
+    var p = cur.p; if (!p) return;
+    $('#mKind').textContent = matN(p) + ' · ' + lenN(p);
+    $('#mName').textContent = pName(p); $('#mPrice').textContent = money.format(p.price); $('#mDesc').textContent = pDesc(p);
+    $('#mCare').textContent = t(CARE[p.mat]); $('#mFit').textContent = t(FIT[p.mat]) + ' ' + t('Model is 175 cm and wears size S.');
+    var sw = $('#mSwatches'); sw.innerHTML = '';
+    p.colors.forEach(function (c, i) {
+      var b = el('button'); b.type = 'button'; b.style.background = c[1]; b.title = t(c[0]); b.setAttribute('aria-label', t(c[0])); b.setAttribute('aria-pressed', i === cur.ci ? 'true' : 'false');
+      b.addEventListener('click', function () {
+        cur.ci = i; Array.prototype.forEach.call(sw.children, function (x, j) { x.setAttribute('aria-pressed', j === i ? 'true' : 'false'); });
+        $('#mColor').textContent = t(c[0]); onColor();
+      });
+      sw.appendChild(b);
+    });
+    $('#mColor').textContent = t(p.colors[cur.ci][0]);
+    var sz = $('#mSizes'); sz.innerHTML = '';
+    SIZES.forEach(function (s) {
+      var b = el('button', '', s[0]); b.type = 'button'; b.setAttribute('aria-pressed', cur.size === s[0] ? 'true' : 'false');
+      b.addEventListener('click', function () {
+        cur.size = s[0]; Array.prototype.forEach.call(sz.children, function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+        $('#mSizeLbl').textContent = sizeLabel(); $('#mErr').textContent = '';
+      });
+      sz.appendChild(b);
+    });
+    $('#mSizeLbl').textContent = sizeLabel(); $('#mErr').textContent = '';
+  }
+  function mountModalView() {
+    var fr = framesOf(cur.p, cur.ci);
+    if (mv3 && !mv3.failed) mv3.setActive(false);
+    if (mpv) mpv.setActive(false);
+    if (fr) {
+      if (!mpv) { mpv = new PhotoViewer($('#mPhoto')); mpv.onRot = syncRot; mpv.onUser = function () { setAuto(false); }; }
+      $('#mPhoto').hidden = false; $('#mCv').hidden = true; $('#mNoGl').hidden = true;
+      view = mpv; mpv.rot = 0; mpv.tween = null; mpv.vel = 0; setAuto(true); mpv.setFrames(fr); mpv.setActive(true);
+    } else {
+      $('#mPhoto').hidden = true;
+      if (T && !mv3) {
+        mv3 = new Viewer($('#mCv'));
+        if (!mv3.failed) { mv3.onRot = syncRot; mv3.onUser = function () { setAuto(false); }; }
+      }
+      if (mv3 && !mv3.failed) {
+        $('#mCv').hidden = false; $('#mNoGl').hidden = true; view = mv3;
+        mv3.rot = 0.4; mv3.tween = null; mv3.vel = 0; setAuto(true); mv3.setProduct(cur.p, cur.ci); mv3.setActive(true);
+      } else { $('#mNoGl').hidden = false; $('#mCv').hidden = true; view = null; }
+    }
+    syncRot(view ? view.rot : 0);
+  }
+  function onColor() {
+    var fr = framesOf(cur.p, cur.ci);
+    if (!fr && view && view === mv3) mv3.setProduct(cur.p, cur.ci); else mountModalView();
+  }
+  function openModal(id, ci) {
+    var p = byId(id); if (!p) return;
+    cur = { p: p, ci: ci || 0, size: null }; opener = document.activeElement;
+    fillModal();
+    $$('.minfo details').forEach(function (d) { d.open = false; });
+    modal.hidden = false; document.body.style.overflow = 'hidden';
+    $('.minfo').scrollTop = 0; $('.mcard').scrollTop = 0;
+    mountModalView();
+    $('#mClose').focus();
+  }
+  function closeModal() {
+    modal.hidden = true; document.body.style.overflow = ''; if (view) view.setActive(false);
+    if (opener && opener.focus) opener.focus();
+  }
+  $('#mClose').addEventListener('click', closeModal);
+  modal.addEventListener('mousedown', function (e) { if (e.target === modal) closeModal(); });
+  $$('.angles [data-a]').forEach(function (b) { b.addEventListener('click', function () { if (view) { view.turnTo(+b.dataset.a); setAuto(false); } }); });
+  autoBtn.addEventListener('click', function () { setAuto(autoBtn.getAttribute('aria-pressed') !== 'true'); });
+  rot.addEventListener('input', function () { if (view) { view.rot = (+rot.value) * Math.PI / 180; view.tween = null; setAuto(false); rotOut.textContent = rot.value + '°'; } });
+  $('#vwrap').addEventListener('keydown', function (e) {
+    if (!view) return;
+    if (e.key === 'ArrowLeft') { view.rot -= 0.17; setAuto(false); e.preventDefault(); }
+    if (e.key === 'ArrowRight') { view.rot += 0.17; setAuto(false); e.preventDefault(); }
+  });
+
+  /* ---------- bag ---------- */
+  var bag = [], drawer = $('#drawer'), toastT = 0;
+  function bagCount() { return bag.reduce(function (n, i) { return n + i.qty; }, 0); }
+  function renderBag() {
+    $('#bagN').textContent = bagCount();
+    var list = $('#dList'); list.innerHTML = '';
+    if (!bag.length) {
+      var e = el('div', 'dempty', '<p>' + t('Your bag is empty.') + '</p>'); var b = el('button', 'btn line', t('Browse the collection')); b.type = 'button';
+      b.addEventListener('click', function () { closeDrawer(); location.hash = 'collection'; }); e.appendChild(b); list.appendChild(e);
+    }
+    var total = 0;
+    bag.forEach(function (it, idx) {
+      var p = byId(it.id), c = p.colors[it.ci]; total += p.price * it.qty;
+      var row = el('div', 'item');
+      var th = el('div', 'th'); var im = el('img'); im.alt = ''; im.src = thumbSrc(p, it.ci); th.appendChild(im); row.appendChild(th);
+      var mid = el('div'); mid.appendChild(el('h3', '', pName(p)));
+      mid.appendChild(el('div', 'meta', isAr() ? t(c[0]) + ' · المقاس ' + it.size + ' · الكمية ' + it.qty : c[0] + ' · Size ' + it.size + ' · Qty ' + it.qty));
+      var rm = el('button', 'rm', t('Remove')); rm.type = 'button'; rm.addEventListener('click', function () { bag.splice(idx, 1); renderBag(); }); mid.appendChild(rm);
+      row.appendChild(mid); row.appendChild(el('div', 'price', money.format(p.price * it.qty)));
+      list.appendChild(row);
+    });
+    $('#dTotal').textContent = money.format(total);
+    $('#checkout').disabled = !bag.length; $('#cNote').textContent = '';
+  }
+  function openDrawer() { renderBag(); drawer.hidden = false; document.body.style.overflow = 'hidden'; $('#dClose').focus(); }
+  function closeDrawer() { drawer.hidden = true; if (modal.hidden) document.body.style.overflow = ''; }
+  $('#bagBtn').addEventListener('click', function () { opener = this; openDrawer(); });
+  $('#dClose').addEventListener('click', function () { closeDrawer(); $('#bagBtn').focus(); });
+  drawer.addEventListener('mousedown', function (e) { if (e.target === drawer) closeDrawer(); });
+  $('#checkout').addEventListener('click', function () { $('#cNote').textContent = t('Diva is a concept store, so checkout is not connected.'); });
+  $('#addBtn').addEventListener('click', function () {
+    if (!cur.size) {
+      $('#mErr').textContent = t('Select a size to add this jacket to your bag.');
+      var s = $('#mSizes'); s.classList.remove('shake'); void s.offsetWidth; s.classList.add('shake'); return;
+    }
+    var found = null; bag.forEach(function (i) { if (i.id === cur.p.id && i.ci === cur.ci && i.size === cur.size) found = i; });
+    if (found) found.qty++; else bag.push({ id: cur.p.id, ci: cur.ci, size: cur.size, qty: 1 });
+    $('#bagN').textContent = bagCount();
+    var bb = $('#bagBtn'); bb.classList.remove('bump'); void bb.offsetWidth; bb.classList.add('bump');
+    var c = t(cur.p.colors[cur.ci][0]), nm = pName(cur.p);
+    toast(isAr() ? 'تمت إضافة ' + nm + '، ' + c + '، المقاس ' + cur.size : 'Added ' + nm + ', ' + c + ', size ' + cur.size);
+  });
+  function toast(msg) {
+    var tt = $('#toast'); tt.innerHTML = ''; tt.appendChild(el('span', '', msg));
+    var b = el('button', '', t('View bag')); b.type = 'button'; b.addEventListener('click', function () { tt.hidden = true; closeModal(); opener = $('#bagBtn'); openDrawer(); }); tt.appendChild(b);
+    tt.hidden = false; clearTimeout(toastT); toastT = setTimeout(function () { tt.hidden = true; }, 4500);
+  }
+
+  /* keyboard: close and focus trap */
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') { if (!drawer.hidden) { closeDrawer(); $('#bagBtn').focus(); } else if (!modal.hidden) closeModal(); return; }
+    if (e.key !== 'Tab') return;
+    var root = !drawer.hidden ? drawer : (!modal.hidden ? modal : null); if (!root) return;
+    var f = $$('button:not([disabled]), [href], input, summary, [tabindex="0"]').filter(function (x) { return root.contains(x) && x.offsetParent !== null; });
+    if (!f.length) return;
+    var first = f[0], last = f[f.length - 1];
+    if (e.shiftKey && document.activeElement === first) { last.focus(); e.preventDefault(); }
+    else if (!e.shiftKey && document.activeElement === last) { first.focus(); e.preventDefault(); }
+  });
+
+  /* newsletter */
+  $('#nlForm').addEventListener('submit', function (e) {
+    e.preventDefault(); var v = $('#nlMail').value.trim(), m = $('#nlMsg');
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v)) { m.textContent = t('Enter a valid email address.'); return; }
+    m.textContent = t('Thank you. Diva is a concept site, so nothing was saved.'); $('#nlMail').value = '';
+  });
+
+  /* language switch */
+  function setLang(l) {
+    lang = l; try { localStorage.setItem('diva-lang', l); } catch (e) {}
+    var h = document.documentElement; h.setAttribute('lang', l); h.setAttribute('dir', l === 'ar' ? 'rtl' : 'ltr');
+    translateStatic();
+    var lb = $('#langBtn'); lb.textContent = l === 'ar' ? 'EN' : 'العربية'; lb.setAttribute('aria-label', l === 'ar' ? 'Switch to English' : 'التبديل إلى العربية');
+    $('#nlMsg').textContent = ''; $('#cNote').textContent = '';
+    renderRibbon(); $('#sizeTable').innerHTML = sizeTable(); $('#mTable').innerHTML = sizeTable();
+    renderGrid(); renderHeroDots(); heroCaption(); renderBag();
+    if (!modal.hidden) fillModal();
+    if (!toastEl.hidden) toastEl.hidden = true;
+  }
+  var toastEl = $('#toast');
+  $('#langBtn').addEventListener('click', function () { setLang(isAr() ? 'en' : 'ar'); });
+
+  /* page motion: header shadow, ghost parallax, reveal on scroll */
+  var topbar = $('#topbar'), ghost = $('#ghost'), tick = false;
+  window.addEventListener('scroll', function () {
+    if (tick) return; tick = true;
+    requestAnimationFrame(function () {
+      var y = window.pageYOffset; topbar.classList.toggle('stuck', y > 8);
+      if (!reduce && y < 1400) ghost.style.transform = 'translate(-50%,' + (y * 0.16) + 'px)';
+      tick = false;
+    });
+  }, { passive: true });
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (en) { en.forEach(function (x) { if (x.isIntersecting) { x.target.classList.add('in-view'); io.unobserve(x.target); } }); }, { rootMargin: '0px 0px -8% 0px' });
+    $$('.rv').forEach(function (n) { io.observe(n); });
+    new IntersectionObserver(function (en) { heroVisible = en[0].isIntersecting; if (heroView) heroView.setActive(heroVisible && !document.hidden); }, { threshold: 0.05 }).observe($('#heroCard'));
+  } else $$('.rv').forEach(function (n) { n.classList.add('in-view'); });
+  document.addEventListener('visibilitychange', function () { if (heroView) heroView.setActive(heroVisible && !document.hidden); });
+
+  setLang(lang);
+  mountHero(true);
+})();
+</script>
